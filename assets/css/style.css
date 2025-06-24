@@ -1,0 +1,785 @@
+#bg {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url('../../images/bg.jpg') center/cover no-repeat;
+  filter: brightness(.5) blur(6px);
+  z-index: -1;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#bg2 {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url('../../images/bg2.jpg') center/cover no-repeat;
+  filter: brightness(.5);
+  z-index: -1;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+:root {
+    --nav-background-color: #4a5b69;
+    --about-background-color: #53626e;
+    --image-dimensions: 5%;
+    --margin: 5vw;
+    --font-size: .8rem;
+    --button-height: 15vw;
+    --z-index-bg: -1;
+    --z-index-nav: 1000;
+    --usable-h: calc(100vh - 3rem);
+    --floating-nav-height: 3rem;
+}
+
+html {
+  /* smooth scroll is nice, but optional if you already have JS handling it */
+  scroll-behavior: smooth;
+
+  /* reserve space equal to your nav height for all anchor jumps: */
+  scroll-padding-top: var(--floating-nav-height);
+}
+
+
+
+body:not(.is-preload) .floating-nav {
+    background-color: black !important;
+}
+
+/* ──────────────────────────────────────────────────── */
+/* 1) Global reset & box‑sizing */
+/* ──────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  padding-top: 3rem;
+}
+
+/* ──────────────────────────────────────────────────── */
+/* 2) Navbar & Hamburger */
+/* ──────────────────────────────────────────────────── */
+.floating-nav {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: black;
+  padding: 0 1rem;
+  z-index: 1000;
+}
+
+.nav-logo {
+  color: #f0f1ff;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.nav-button {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 1.2rem;
+  color: #f0f1ff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+/* Hamburger toggle (hidden by default) */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: #f0f1ff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 1001;
+  position: relative;
+}
+
+/* Dropdown (hidden by default) */
+.nav-dropdown {
+  position: absolute;
+  top: 3rem;
+  left: 0;
+  width: 100%;
+  display: none;
+  flex-direction: column;
+  background: black;
+  z-index: 999;
+}
+
+.nav-dropdown.show {
+  display: flex;
+}
+
+.nav-dropdown a {
+  display: block;
+  width: 100%;
+  height: 3rem;
+  line-height: 3rem;
+  text-align: center;
+  color: #f0f1ff;
+  text-decoration: none;
+  border-top: 1px solid #444;
+}
+
+/* Show hamburger & hide inline buttons under 800px */
+@media (max-width: 800px) {
+  .nav-buttons { display: none; }
+  .hamburger  { display: block; }
+}
+
+/* ──────────────────────────────────────────────────── */
+/* 3) Banners: 75/25 split, no vertical scroll */
+/* ──────────────────────────────────────────────────── */
+.scroll-sections {
+  margin-top: 0; /* push below fixed nav */
+}
+
+/* ABOUT = 75% of (100vh – 3rem) */
+.about-banner {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f1ff;
+  overflow: hidden;
+  position: relative;
+  height: calc(var(--usable-h) * 0.75);
+}
+
+/* CONTACT = 25% of (100vh – 3rem) */
+.contact-banner {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(12, 13, 14, 0.65);
+  overflow: hidden;
+  position: relative;
+  height: calc(var(--usable-h) * 0.25);
+}
+
+/* Inner flex containers */
+.about-content,
+.contact-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  width: 100%;
+  gap: 2rem;
+  padding: 0 2rem;
+}
+
+/* ──────────────────────────────────────────────────── */
+/* 4) About: circle image & text styling */
+/* ──────────────────────────────────────────────────── */
+
+.about-content {
+  display: flex;
+  flex-direction: row;    /* always side‑by‑side on desktop */
+  flex-wrap: nowrap;      /* prevent items from swapping */
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.about-image {
+  order: 0;               /* always first */
+  margin-right: 2rem;     /* space between image & text */
+  width: 20vw;
+  max-width: 250px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  flex-shrink: 0;
+}
+
+.about-text {
+  order: 1;               /* always second */
+  flex: 1 1 300px;
+  max-width: 600px;
+  color: #222;
+  text-align: left;
+}
+
+.about-text h2 {
+  font-size: 1.5rem;
+  color: #222;
+  margin-bottom: 1rem;
+}
+
+.about-description {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* ──────────────────────────────────────────────────── */
+/* Contact: icon & text layout                         */
+/* ──────────────────────────────────────────────────── */
+.contact-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+}
+
+.contact-text {
+  font-size: 1rem;
+  color: #fff;
+}
+
+.social-links {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.social-icon {
+  font-size: 1.5rem;
+  transition: color 0.3s;
+}
+
+.social-icon:hover {
+  color: rgba(255,255,255,0.7);
+}
+
+/* ──────────────────────────────────────────────────── */
+/* Responsive tweaks                                    */
+/* ──────────────────────────────────────────────────── */
+@media (max-width: 800px) {
+
+  /* 1) Allow the about-banner to show the top of the image */
+  .about-banner {
+    align-items: flex-start;    /* push content down from top */
+    padding-top: 1rem;          /* extra space above */
+    overflow: visible;          /* let the image “peek” if needed */
+  }
+
+  /* 2) Give a little breathing room inside the content */
+  .about-content {
+    margin-top: 1rem;           /* separate content from banner top */
+  }
+
+  /* 3) Adjust image sizing and centering */
+  .about-image {
+    width: 35vw;                /* a bit smaller so it fits vertically */
+    max-width: 200px;
+    margin: 0 auto 1rem;        /* center and gap below */
+  }
+
+  /* 4) Stack text normally */
+  .about-text {
+    max-width: 100%;
+    order: 1;
+  }
+
+}
+
+
+@media (max-width: 480px) {
+  .about-banner {
+    height: calc(75vh - 1rem);
+  }
+  .contact-banner {
+    height: calc(25vh - 0.5rem);
+  }
+  .about-description,
+  .contact-text {
+    font-size: 0.9rem;
+  }
+}
+
+
+.content-container {
+    margin-top: 0rem;
+    padding: 1rem;
+}
+
+.project-banner {
+    margin: 5vw 5vw 5vw 5vw;
+    padding: 2rem;
+    background: rgba(12, 13, 14, 0.5);
+    border-radius: 0.1rem;
+    color: #f0f1ff;
+    position: relative;
+}
+
+.project-title-section {
+    text-align: center;
+    padding-bottom: 1.5rem;
+}
+
+.project-title-section h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #f0f1ff;
+}
+
+.project-subtitle-section {
+    font-size: 1.3rem;
+    margin-top: -1rem;
+    text-align: center;
+    margin-bottom: -2.7rem;
+    font-weight: bold;
+    color: #f0f1ff;
+}
+
+.title-underline {
+    width: 80%;
+    height: .5px;
+    background: #f0f1ff;
+    margin: 0 auto;
+}
+
+.content-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 0rem 0rem;
+    border-bottom: 1px solid rgba(240, 241, 255, 0.1);
+}
+
+.content-left {
+    flex: var(--image-dimensions);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin-left: var(--margin);
+    justify-content: flex-start;
+}
+
+.image-left {
+  /* prevent shrinking or growing; base size = 50% of the parent */
+  flex: 0 0 50%;
+  max-width: 100%;        /* extra safety so it never exceeds half */
+  display: block;        /* you probably don’t need inner flex here */
+  padding: 0;
+  border-radius: 8px;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.3);
+  border: 3px solid white;
+}
+
+.content-right {
+    flex: 1;
+    margin-right: var(--margin);
+    margin-left: 2vw;
+}
+
+.section-image {
+    width: 90%;
+    aspect-ratio: 1.7;
+    object-fit: cover;
+    display: block;
+}
+
+.image-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+}
+
+.section-title {
+    font-size: 1rem;
+    color: #f0f1ff;
+}
+
+.section-description {
+    font-size: .7rem;
+    line-height: 1.6;
+    color: rgba(240, 241, 255, 0.8);
+}
+
+@media (max-width: 768px) {
+    .content-section {
+        flex-direction: column;
+        gap: 0rem;
+    }
+
+    .content-left,
+    .content-right {
+        padding: 0;
+    }
+}
+
+.description-section {
+    margin: 3rem;
+    margin-top: -3rem;
+    padding: 2rem 0;
+    align-content: center;
+    border-bottom: 1px solid rgba(240, 241, 255, 0.1);
+    font-size: var(--font-size);
+    line-height: 1.6;
+    color: rgba(240, 241, 255, 0.8);
+}
+
+.carousel-section {
+    overflow: hidden;
+    margin: 2rem 0;
+}
+
+.carousel-container {
+    display: flex;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: 1rem 0;
+}
+
+.carousel-container::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel-item {
+    flex: 0 0 auto;
+    width: 20vw;
+    height: 20vw;
+}
+
+.carousel-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.website-button {
+    display: block;
+    width: calc(100% + 4rem);
+    padding: 1rem;
+    background-color: transparent;
+    border: none;
+    color: #f0f1ff;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    margin: -2rem -2rem -2rem -2rem;
+}
+
+.website-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+}
+
+/* ========== TITLE (LEFT) ========== */
+/* ============================================
+   FULL OVERRIDE: HEADER TITLE LEFT, SEARCH RIGHT
+   ============================================ */
+
+.portfolio-header {
+  /* keep your existing placement */
+  position: relative !important;
+  top: calc(var(--floating-nav-height) - 4.5rem) !important;
+  margin: 0;
+  left: 0 !important;
+  width: 100% !important;
+  height: 3rem !important;
+  padding: 0 2rem !important;
+  z-index: 999 !important;
+
+  /* FORCE flex row with no wrapping */
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  justify-content: space-between !important; /* title at left padding, search at right padding */
+  align-items: center !important;             /* vertical center */
+}
+
+/* TITLE: flush left, remove old hacks */
+.portfolio-header-title {
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+  right: auto !important;
+  transform: none !important;
+  margin: 0 !important;
+  
+  color: #f0f1ff;
+  font-size: 1.7rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 1; /* ensure it fits within 3rem */
+}
+
+
+.portfolio-header-title:after {
+  content: '';
+  position: relative;
+  bottom: -10px;
+  left: 0;           /* start at the left edge of the title text */
+  transform: none;   /* no more centering transform */
+  width: 80px;
+  height: 4px;
+  background: #4b6cc1;
+  border-radius: 2px;
+}
+
+/* SEARCH: flex child on the right */
+.search-container {
+  position: static !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* WRAPPER for input */
+.search-box {
+  width: 250px !important;    /* adjust as needed */
+  max-width: 40vw !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* INPUT STYLES */
+#search {
+  width: 100% !important;
+  padding: 0.5rem 1rem !important;
+  background: rgba(12, 13, 14, 0.5) !important;
+  border: 1px solid #2a3449 !important;
+  border-radius: 30px !important;
+  color: #e0e0e0 !important;
+  font-size: 1rem !important;
+  transition: all 0.3s ease !important;
+  line-height: normal !important;
+}
+
+#search:focus {
+  outline: none !important;
+  border-color: black !important;
+  box-shadow: 0 0 10px rgba(75, 108, 193, 0.5) !important;
+}
+
+
+.projects-list {
+  position: relative;
+}
+
+#main {
+    margin-top: 5rem;
+}
+
+.project-button {
+    display: flex; 
+    align-items: center;
+    gap: 2rem;
+    width: 80vw;
+    height: var(--button-height);
+    max-width: 1800px;
+    margin: 1rem auto;
+    padding: 0;
+    border: none;
+    color: white;
+    background: rgba(12, 13, 14, 0.5);
+    text-decoration: none;
+    border-radius: 0.2rem;
+    transition: transform 0.3s ease;
+    overflow: hidden;
+}
+
+.project-button:not(:has(.project-info)) {
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.project-info {
+    flex: 1;
+    padding: 1rem 2rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    justify-content: space-between;
+    gap: 0.5rem;
+    min-width: 0;
+}
+
+.project-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0;
+    color: white;
+}
+
+.project-description {
+    font-size: 0.7rem;
+    line-height: 1.5;
+    margin: 0.5rem 0;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.project-divider {
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.project-date {
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.portfolio-title, .project-button {
+    position: relative;
+    z-index: 2;
+}
+
+/* Existing 4-image grid styles (unchanged) */
+.image-grid-container {
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.grid-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border: 1px solid #444;
+    justify-content: center;
+    height: auto;
+}
+
+.grid-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.grid-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 8px;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.image-caption {
+    text-align: center;
+    margin: 1rem auto 1rem;
+    color: #aaa;
+    font-size: 1rem;
+    max-width: 800px;
+    font-style: italic;
+}
+
+/* Container for the two images */
+.two-image-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+.image-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.image-wrapper img {
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border: 1px solid #444;
+}
+
+.image-caption {
+    text-align: center;
+    margin-top: 10px;
+    color: #aaa;
+    font-size: 0.9rem;
+}
+
+.overall-caption {
+    text-align: center;
+    margin: 1rem auto;
+    color: #aaa;
+    font-size: 1rem;
+    max-width: 800px;
+    font-style: italic;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .two-image-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .image-wrapper {
+        margin-bottom: 15px;
+    }
+}
+
+/* Video container with responsive sizing */
+.video-container {
+  position: relative;
+  max-width: 80%;
+  width: 100%; /* Allows responsive width */
+  margin: 0 auto; /* Centers horizontally */
+  border-radius: 8px;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.3);
+  border: 1px solid #444;
+  overflow: hidden; /* Ensures border-radius applies to video */
+}
+
+/* Aspect ratio handling (16:9 by default) */
+.video-container::before {
+  content: "";
+  display: block;
+  padding-top: 56.25%; /* 16:9 aspect ratio (9/16 = 0.5625) */
+}
+
+/* Video element styling */
+.video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Maintains aspect ratio while filling container */
+}
+
+/* Optional: Custom controls styling */
+.video-container video::-webkit-media-controls {
+  border-radius: 0 0 8px 8px;
+}

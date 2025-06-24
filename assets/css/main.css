@@ -1,12 +1,6 @@
 @import url(fontawesome-all.min.css);
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300italic,600italic,300,600");
 
-/*
-	Dimension by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
-
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
 pre, a, abbr, acronym, address, big, cite,
@@ -72,7 +66,6 @@ input, select, textarea {
 	appearance: none;
 }
 
-/* Basic */
 
 	@-ms-viewport {
 		width: device-width;
@@ -1111,7 +1104,6 @@ input, select, textarea {
 		-webkit-transform: scale(1.0);
 		-ms-transform: scale(1.0);
 		transform: scale(1.0);
-		-webkit-backface-visibility: hidden;
 		position: fixed;
 		top: 0;
 		left: 0;
@@ -1130,21 +1122,24 @@ input, select, textarea {
 			height: 100%;
 		}
 
-		#bg:before {
-			-moz-transition: background-color 2.5s ease-in-out;
+		/* #bg:before {
+			/* -moz-transition: background-color 2.5s ease-in-out;
 			-webkit-transition: background-color 2.5s ease-in-out;
 			-ms-transition: background-color 2.5s ease-in-out;
 			transition: background-color 2.5s ease-in-out;
 			-moz-transition-delay: 0.75s;
 			-webkit-transition-delay: 0.75s;
 			-ms-transition-delay: 0.75s;
-			transition-delay: 0.75s;
-			background-image: linear-gradient(to top, rgba(19, 21, 25, 0.5), rgba(19, 21, 25, 0.5)), url("../../images/overlay.png");
-			background-size: auto, 256px 256px;
-			background-position: center, center;
-			background-repeat: no-repeat, repeat;
-			z-index: 2;
-		}
+			transition-delay: 0.75s; */
+			/* background-image: linear-gradient(to top, rgba(19, 21, 25, 0.5), rgba(19, 21, 25, 0.5)), url("../../images/overlay.png");
+			background-size: auto,
+ 256px 256px;
+			background-position: center,
+ center;
+			background-repeat: no-repeat,
+ repeat;
+			z-index: 0;
+		} */
 
 		#bg:after {
 			-moz-transform: scale(1.125);
@@ -1159,7 +1154,7 @@ input, select, textarea {
 			background-position: center;
 			background-size: cover;
 			background-repeat: no-repeat;
-			z-index: 1;
+			z-index: 0;
 		}
 
 		body.is-article-visible #bg:after {
@@ -1197,10 +1192,14 @@ input, select, textarea {
 		-ms-justify-content: space-between;
 		justify-content: space-between;
 		position: relative;
-		min-height: 100vh;
+		/* REMOVED: height: 100vh; */
+		/* CHANGED: overflow: hidden; to overflow: visible; */
+		min-height: 100vh; /* Changed from height to min-height */
 		width: 100%;
+		overflow: visible; /* Allow content to flow naturally */
 		padding: 4rem 2rem;
 		z-index: 3;
+	    margin-top: -6rem;
 	}
 
 		#wrapper:before {
@@ -1257,6 +1256,10 @@ input, select, textarea {
 		background-image: radial-gradient(rgba(0, 0, 0, 0.25) 25%, rgba(0, 0, 0, 0) 55%);
 		max-width: 100%;
 		text-align: center;
+
+		margin: auto;
+		/* padding: 2rem; */
+		max-height: 100vh;
 	}
 
 		#header > * {
@@ -1265,6 +1268,7 @@ input, select, textarea {
 			-ms-transition: opacity 0.325s ease-in-out;
 			transition: opacity 0.325s ease-in-out;
 			position: relative;
+
 			margin-top: 3.5rem;
 		}
 
@@ -1274,7 +1278,6 @@ input, select, textarea {
 				position: absolute;
 				top: calc(-3.5rem - 1px);
 				left: calc(50% - 1px);
-				width: 1px;
 				height: calc(3.5rem + 1px);
 				background: #ffffff;
 			}
@@ -1305,6 +1308,7 @@ input, select, textarea {
 			border-top-width: 1px;
 			border-bottom-width: 1px;
 			max-width: 100%;
+			width: 21rem;
 		}
 
 			#header .content .inner {

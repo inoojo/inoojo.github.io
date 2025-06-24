@@ -1,0 +1,519 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Stair-Climbing Robot - Portfolio</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<link rel="stylesheet" href="assets/css/main.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <style>
+            /* Only added necessary styles for the image-description container */
+            .image-description-container {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 30px;
+                margin: 0;
+            }
+            
+            .image-container {
+                flex: 0 0 calc(50% - 15px);
+                max-width: calc(50% - 15px);
+            }
+            
+            .description-container {
+                flex: 0 0 calc(50% - 15px);
+                max-width: calc(50% - 15px);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            
+            .description-title {
+                font-size: 1.5rem;
+                color: #6f8dd0;
+                margin-bottom: 15px;
+                font-weight: 600;
+                text-shadow: 0 2.5px 5px rgba(0, 0, 0, 0.7);
+            }
+            
+            .description-text {
+                font-size: 1.1rem;
+                line-height: 1.7;
+                color: #e0e0e0;
+            }
+            
+            /* Responsive adjustments */
+            @media (max-width: 768px) {
+                .image-container, 
+                .description-container {
+                    flex: 0 0 100%;
+                    max-width: 100%;
+                }
+            }
+            
+            /* All your original CSS remains intact below */
+            .project-banner {
+                margin-top: -3rem;
+                position: relative;
+            }
+            
+            .project-section {
+                margin-bottom: 0px;
+                padding-bottom: 0px;
+            }
+            
+            .project-section-title {
+                font-size: 1.5rem;
+                padding-bottom: 1rem;
+                color: #f0f0f0;
+                position: relative;
+                font-weight: 600;
+            }
+            
+            .project-section-title:after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 70px;
+                height: 4px;
+                background: #4b6cc1;
+                border-radius: 2px;
+            }
+            
+            .section-description {
+                font-size: 1rem;
+                line-height: 1.75;
+                color: #e0e0e0;
+            }
+            
+            .section-subtitle {
+                font-size: 1.2rem;
+                margin: 0;
+                color: #d0d0d0;
+                font-weight: 500;
+                padding-left: 15px;
+                border-left: 3px solid #4b6cc1;
+            }
+            
+            .section-description b {
+                color: #4b6cc1;
+                font-weight: 600;
+            }
+            
+            .content-full {
+                width: 100%;
+                margin-top: 1rem;
+            }
+            
+            .project-image {
+                max-width: 80%; /* Limits width to 80% of container */
+                width: auto; /* Allows natural width */
+                height: auto; /* Maintains aspect ratio */
+                display: block;
+                margin: 0 auto; /* Centers horizontally */
+                border-radius: 8px;
+                box-shadow: 0 5px 25px rgba(0,0,0,0.3);
+                border: 1px solid #444;
+            }
+            
+            
+            .key-takeaways {
+                padding: 30px 0;
+                margin: 40px 0;
+            }
+            
+            .skills-list {
+                margin: 30px 0 0 0;
+                padding: 0;
+                list-style-type: none;
+            }
+            
+            .skills-list li {
+                position: relative;
+                padding-left: 25px;
+                margin-bottom: 12px;
+                font-size: 1.1rem;
+                color: #e0e0e0;
+            }
+            
+            .skills-list li:before {
+                content: '•';
+                position: absolute;
+                left: 0;
+                color: #4b6cc1;
+                font-size: 1.4rem;
+                line-height: 1;
+            }
+            
+            .contact-section {
+                text-align: center;
+                margin: 0px;
+                padding: 0px;
+                background-color: #1a1f2d;
+                border-radius: 10px;
+                border: 1px solid #2a3449;
+                box-shadow: 0 5px 25px rgba(0,0,0,0.4);
+            }
+            
+            .contact-section h3 {
+                font-size: 1.5rem;
+                color: #f0f0f0;
+                margin: 1rem 0;
+            }
+
+            .highlight-box {
+                background: rgba(75, 108, 193, 0.15);
+                padding: 25px;
+                border-radius: 10px;
+                border-left: 4px solid #4b6cc1;
+                margin: 30px 0;
+            }
+            
+            .content-left, .content-right {
+                padding: 15px;
+            }
+            
+            .divider {
+                height: 1px;
+                background: rgba(255,255,255,0.1);
+                margin: 35px 0;
+            }
+            
+            /* Added for aspect ratio preservation */
+            .two-image-container .image-wrapper img {
+                object-fit: contain;
+                height: auto;
+                width: auto;
+                max-height: 100%;
+            }
+            
+            /* Video container styles */
+            .video-container {
+                position: relative;
+                max-width: 80%;
+                width: 100%;
+                margin: 0 auto;
+                border-radius: 8px;
+                box-shadow: 0 5px 25px rgba(0,0,0,0.3);
+                border: 1px solid #444;
+                overflow: hidden;
+            }
+            
+            .video-container::before {
+                content: "";
+                display: block;
+                padding-top: 56.25%; /* 16:9 aspect ratio */
+            }
+            
+            .video-container video {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        </style>
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css"></noscript>
+	</head>
+	<body class="is-preload">
+        <nav class="floating-nav">
+            <a href="#header" class="nav-logo"><b>INOO JO</b></a>
+
+            <div class="nav-buttons">
+            <a href="index.html#wrapper" class="nav-button"><b>Home</b></a>
+            <a href="index.html#about" class="nav-button"><b>About</b></a>
+            <a href="index.html#contact" class="nav-button"><b>Contact</b></a>
+            <a href="projects.html" class="nav-button"><b>Projects</b></a>
+            <a href="Inoo_Resume.pdf" target="_blank" class="nav-button"><b>Resume</b></a>
+            </div>
+
+            <button
+            class="hamburger"
+            id="hamburger"
+            aria-label="Toggle menu"
+            aria-expanded="false"
+            >
+            &#9776;
+            </button>
+
+            <div class="nav-dropdown" id="navDropdown">
+            <a href="index.html#wrapper"><b>Home</b></a>
+            <a href="index.html#about"><b>About</b></a>
+            <a href="index.html#contact"><b>Contact</b></a>
+            <a href="projects.html"><b>Projects</b></a>
+            <a href="Inoo_Resume.pdf" target="_blank"><b>Resume</b></a>
+            </div>
+        </nav>
+
+        <div class="project-banner">
+            <!-- Title Section -->
+            <div class="project-title-section">
+                <h1>Combat Robot - Texas Robo Rumble</h1>
+                <div class="title-underline"></div>
+            </div>
+
+            <!-- Hero Section -->
+            <div class="image-description-container">
+                <div class="image-container">
+                    <img src="images/combatRobot/bot.webp" alt="Combat Robot" class="image-left">
+                    <div class="image-caption">
+                        Final bot ready for competition
+                    </div>
+                </div>
+                
+                <div class="description-container">
+                    <h3 class="description-title">3lb Beetle-Weight Combat Robot</h3>
+                    <p class="description-text">
+                        Designed and manufactured in 4 weeks to compete against 15 teams with a strict $300 budget. Featuring a UHMW frame, CNC-machined aluminum beater bar, and custom silicone foam wheels for maximum impact resistance and maneuverability.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Project Summary -->
+            <div class="project-section">
+                <h2 class="project-section-title">Project Summary</h2>
+                <div class="content-full">
+                    <p class="section-description">
+                        This project engineered a 3lb beetle-weight combat robot to compete in the Texas Robo Rumble tournament. Facing predominantly vertical spinners and beater bars, we developed a resilient design featuring a UHMW frame milled on a Tormach 1100 CNC, silicone foam wheels cast in 3D-printed molds, and an aluminum beater bar with interchangeable steel screw teeth. Through four design iterations and topology optimization based on FEA, we achieved perfect weight distribution at 2.98 lbs. The robot placed 2nd out of 15 teams, demonstrating exceptional durability against opponent weapons.
+                    </p>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- Project Overview -->
+            <div class="project-section">
+                <h2 class="project-section-title">Battle-Ready Engineering</h2>
+
+                <!-- Design Philosophy -->
+                <div class="content-section">
+                    <h3 class="section-subtitle">Strategic Design Approach</h3>
+                    <div class="content-full">
+                        <p class="section-description">
+                            Facing vertical spinners within strict budget and weight constraints, we prioritized impact resistance and weight distribution. UHMW polyethylene was selected for its exceptional energy absorption properties (yield modulus), low density, and cost-effectiveness. For mobility, we developed silicone foam wheels cast in 3D-printed molds, optimizing for weight savings over maximum traction since pushing power was secondary to maneuverability in the arena. This material strategy saved 40% weight versus solid rubber alternatives while providing adequate traction.
+                        </p>
+                        
+                        <div class="two-image-container">
+                            <div class="image-wrapper">
+                                <img src="images/combatRobot/early.webp" alt="Beater Bar Design">
+                            </div>
+                            <div class="image-wrapper">
+                                <img src="images/combatRobot/final.webp" alt="Steel Teeth Detail">
+                            </div>
+                        </div>
+                        <div class="image-caption">Early CAD design vs final bot</div>
+
+
+                    </div>
+                </div>
+
+                <!-- Weapon System -->
+                <div class="content-section">
+                    <h3 class="section-subtitle">Weapon System Engineering</h3>
+                    <div class="content-full">
+                        <p class="section-description">
+                            The aluminum beater bar was engineered for optimal mass distribution - heavy enough to transfer kinetic energy but light enough to achieve rapid spin-up times. Starting with manual mill and dropsaw roughing, we finished the component using CNC machining for precision balancing. Threaded mounts allowed quick replacement of hardened steel screw teeth between matches, maintaining offensive capability throughout the tournament. Dynamic balancing ensured minimal vibration at operational RPMs.
+                        </p>
+
+                        <div class="two-image-container">
+                            <div class="image-wrapper">
+                                <img src="images/combatRobot/beaterBarDesign.webp" alt="Beater Bar Design">
+                            </div>
+                            <div class="image-wrapper">
+                                <img src="images/combatRobot/teethDetail.webp" alt="Steel Teeth Detail">
+                            </div>
+                        </div>
+                        <div class="image-caption">Beater bar design and steel screw teeth detail</div>
+                    </div>
+                </div>
+
+                <!-- Frame Development -->
+                <div class="content-section">
+                    <h3 class="section-subtitle">Frame Development & Fabrication</h3>
+                    <div class="content-full">
+                        <p class="section-description">
+                            Laser-cut prototypes tested various side panel configurations, with topology optimization via finite element analysis guiding the final geometry to withstand cantilever forces. The UHMW frame was precision-milled on a Tormach 1100 CNC, creating interlocking joints that distributed impact energy across the structure. Steel side panels were added as sacrificial elements to protect critical electronics from direct hits.
+                        </p>
+                        <div class="image-grid">
+                            <div class="grid-item">
+                                <img src="images/combatRobot/laserPrototype.webp" alt="Laser Prototype">
+                            </div>
+                            <div class="grid-item">
+                                <img src="images/combatRobot/cncMilling.webp" alt="CNC Milling">
+                            </div>
+                            <div class="grid-item">
+                                <img src="images/combatRobot/frameAssembly.webp" alt="Frame Assembly">
+                            </div>
+                            <div class="grid-item">
+                                <img src="images/combatRobot/electronicsLayout.webp" alt="Electronics Layout">
+                            </div>
+                        </div>
+                        <div class="image-caption">Prototyping, milling, and assembly process</div>
+                    </div>
+                </div>
+
+                <!-- Competition Performance -->
+                <div class="content-section">
+                    <h3 class="section-subtitle">Tournament Performance</h3>
+                    <div class="content-full">
+                        <p class="section-description">
+                            In the Texas Robo Rumble, our robot demonstrated exceptional resilience against vertical spinners that destroyed other competitors' bots. Post-tournament inspection revealed only minor bite marks on the UHMW frame from opponent weapons, with all critical systems remaining operational through the semifinals. Our strategic design choices proved effective: the UHMW frame absorbed impacts without cracking, modular weapon teeth enabled rapid field repairs, and optimal weight distribution prevented flipping during high-G maneuvers.
+                        </p>
+                        
+                        <div class="highlight-box">
+                            <p class="section-description">
+                                <b>Competition Result:</b> Placed 2nd out of 15 teams at Texas Robo Rumble, with the robot surviving direct hits from steel weapons that eliminated other competitors.
+                            </p>
+                        </div>
+                        
+                        <div class="video-container">
+                        <video controls>
+                            <source src="images/combatRobot/competitionFootage.webm" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        </div>
+                        <div class="image-caption">Competition highlights showing resilience against opponent weapons</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Takeaways -->
+            <div class="project-section">
+                <h2 class="project-section-title">Key Takeaways & Skills Utilized</h2>
+                <p class="section-description">
+                    This project demonstrated that material selection and weight distribution matter more than absolute armor thickness in combat robotics. We learned that UHMW's impact absorption outperformed polycarbonate at similar weights despite costing 60% less, and that center-of-mass positioning was critical for resisting flipping. Budget management became an art form, with strategic splurges on steel teeth balanced by cost-saving 3D-printed wheel molds.
+                </p>
+                
+                <div class="highlight-box">
+                    <p class="section-description">
+                        <b>Engineering Insight:</b> The UHMW frame's performance redefined our approach to impact resistance - energy absorption through material deformation proved more effective than rigid protection against vertical spinners.
+                    </p>
+                </div>
+                
+                <h3 class="section-subtitle">Technical Skills Developed</h3>
+                <ul class="skills-list">
+                    <li>CNC Machining (Tormach 1100)</li>
+                    <li>FEA-Based Topology Optimization</li>
+                    <li>Dynamic Weapon Balancing</li>
+                    <li>Silicone Molding & Composite Fabrication</li>
+                    <li>BattleBots Rule-Compliant Design</li>
+                    <li>Electronics Hardening Against Impacts</li>
+                    <li>Rapid Prototyping with Laser Cutting</li>
+                    <li>Strategic Budget Management</li>
+                </ul>
+            </div>
+
+            <!-- Additional Information -->
+            <div class="divider"></div>
+
+            <div class="project-section">
+                <h2 class="project-section-title">Additional Information</h2>
+                <div class="contact-section">
+                    <h3>Combat Robot Specifications</h3>
+                    <p class="section-description">
+                        Weight: 2.98 lbs | Weapon: Aluminum beater bar with steel teeth | Drive: 2-wheel silicone foam | Frame: UHMW with steel side panels | Speed: 15 mph | Weapon RPM: 8,000
+                    </p>
+                    <p class="section-description">
+                        For technical specifications, design files, or competition footage:
+                    </p>
+                    <a href="https://texasroborumble.com/results" 
+                    target="_blank"
+                    style="display: inline-block; 
+                            margin-top: 0; 
+                            margin-bottom: 1rem; 
+                            padding: 10px 20px; 
+                            background: rgba(75, 108, 193, 0.2); 
+                            color: #f0f0f0; 
+                            text-decoration: none; 
+                            border-radius: 5px; 
+                            border: 1px solid #4b6cc1;
+                            transition: background 0.3s ease;
+                            font-weight: 600;">
+                        Texas Robo Rumble Results
+                    </a>
+                </div>
+            </div>
+        </div>
+
+		<div id="bg2"></div>
+
+        <!-- Fixed JavaScript for multiple containers -->
+        <!-- Fixed JavaScript for multiple containers -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // Select all two-image containers
+                const containers = document.querySelectorAll('.two-image-container');
+                
+                containers.forEach(container => {
+                    // Get images within this container
+                    const images = container.querySelectorAll('.image-wrapper img');
+                    
+                    if (!images || images.length < 2) {
+                        return;
+                    }
+                    
+                    const image1 = images[0];
+                    const image2 = images[1];
+                    
+                    // Configuration
+                    const GAP = 15; // px
+                    let MAX_CONTAINER_WIDTH = 0.8 * container.parentElement.offsetWidth;
+                    
+                    // Function to resize images
+                    function resizeImages() {
+                        // Ensure images are loaded
+                        if (!image1.naturalWidth || !image2.naturalWidth || 
+                            image1.naturalWidth === 0 || image2.naturalWidth === 0) {
+                            return;
+                        }
+                        
+                        // Get aspect ratios
+                        const aspectRatio1 = image1.naturalWidth / image1.naturalHeight;
+                        const aspectRatio2 = image2.naturalWidth / image2.naturalHeight;
+                        
+                        // Calculate max height that fits in container
+                        const maxHeight = (MAX_CONTAINER_WIDTH - GAP) / (aspectRatio1 + aspectRatio2);
+                        
+                        // Set the same height for both images
+                        const commonHeight = Math.min(
+                            maxHeight,
+                            image1.naturalHeight,
+                            image2.naturalHeight
+                        );
+                        
+                        // Apply the height
+                        image1.style.height = `${commonHeight}px`;
+                        image2.style.height = `${commonHeight}px`;
+                    }
+                    
+                    // Initialize when images load
+                    function init() {
+                        if (image1.complete && image2.complete) {
+                            resizeImages();
+                        } else {
+                            image1.addEventListener('load', resizeImages);
+                            image2.addEventListener('load', resizeImages);
+                        }
+                    }
+                    
+                    // Handle window resize
+                    window.addEventListener('resize', () => {
+                        MAX_CONTAINER_WIDTH = 0.8 * container.parentElement.offsetWidth;
+                        resizeImages();
+                    });
+                    
+                    // Start the process
+                    init();
+                });
+            });
+        </script>
+
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+	</body>
+</html>
