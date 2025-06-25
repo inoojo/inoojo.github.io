@@ -116,6 +116,14 @@
                 box-shadow: 0 5px 25px rgba(0,0,0,0.3);
                 border: 1px solid #444;
             }
+
+            @media (max-width: 768px) {
+                .project-image{
+                    max-width: 100%;
+                    margin: 0;
+                }
+                
+            }
             
             
             .key-takeaways {
@@ -486,7 +494,7 @@
                     
                     // Configuration
                     const GAP = 15; // px
-                    let MAX_CONTAINER_WIDTH = 0.8 * container.parentElement.offsetWidth;
+                    let MAX_CONTAINER_WIDTH = (window.innerWidth < 768 ? 1 : 0.8) * container.parentElement.offsetWidth;
                     
                     // Function to resize images
                     function resizeImages() {
@@ -527,7 +535,7 @@
                     
                     // Handle window resize
                     window.addEventListener('resize', () => {
-                        MAX_CONTAINER_WIDTH = 0.8 * container.parentElement.offsetWidth;
+                        MAX_CONTAINER_WIDTH = (window.innerWidth < 768 ? 1 : 0.8) * container.parentElement.offsetWidth;
                         resizeImages();
                     });
                     

@@ -155,14 +155,22 @@
             }
             
             .project-image {
-                max-width: 80%;
-                width: auto;
-                height: auto;
+                max-width: 80%; /* Limits width to 80% of container */
+                width: auto; /* Allows natural width */
+                height: auto; /* Maintains aspect ratio */
                 display: block;
-                margin: 0 auto;
+                margin: 0 auto; /* Centers horizontally */
                 border-radius: 8px;
                 box-shadow: 0 5px 25px rgba(0,0,0,0.3);
                 border: 1px solid #444;
+            }
+
+            @media (max-width: 768px) {
+                .project-image{
+                    max-width: 100%;
+                    margin: 0;
+                }
+                
             }
             
             .key-takeaways {
@@ -554,7 +562,7 @@
                     const image2 = images[1];
                     
                     const GAP = 15;
-                    let MAX_CONTAINER_WIDTH = 0.8 * container.parentElement.offsetWidth;
+                    let MAX_CONTAINER_WIDTH = (window.innerWidth < 768 ? 1 : 0.8) * container.parentElement.offsetWidth;
                     
                     function resizeImages() {
                         if (!image1.naturalWidth || !image2.naturalWidth || 
@@ -587,7 +595,7 @@
                     }
                     
                     window.addEventListener('resize', () => {
-                        MAX_CONTAINER_WIDTH = 0.8 * container.parentElement.offsetWidth;
+                        MAX_CONTAINER_WIDTH = (window.innerWidth < 768 ? 1 : 0.8) * container.parentElement.offsetWidth;
                         resizeImages();
                     });
                     

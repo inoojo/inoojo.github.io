@@ -746,15 +746,14 @@ html, body {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-    .two-image-container {
-        flex-direction: column;
-        align-items: center;
+    .two-image-container, .image-grid, .image-grid-container{
+        max-width: 100%;
+        margin: 0;
     }
     
-    .image-wrapper {
-        margin-bottom: 15px;
-    }
 }
+
+
 
 /* Video container with responsive sizing */
 .video-container {

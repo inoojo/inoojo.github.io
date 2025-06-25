@@ -137,6 +137,14 @@
                 box-shadow: 0 5px 25px rgba(0,0,0,0.3);
                 border: 1px solid #444;
             }
+
+            @media (max-width: 768px) {
+                .project-image{
+                    max-width: 100%;
+                    margin: 0;
+                }
+                
+            }
             
             
             .key-takeaways {
@@ -469,7 +477,7 @@
                     const media1 = mediaElements[0];
                     const media2 = mediaElements[1];
                     const GAP = 15;
-                    let MAX_CONTAINER_WIDTH = 0.8 * container.parentElement.offsetWidth;
+                    let MAX_CONTAINER_WIDTH = (window.innerWidth < 768 ? 1 : 0.8) * container.parentElement.offsetWidth;
                     
                     function getDimensions(media) {
                         return new Promise(resolve => {
@@ -515,7 +523,7 @@
                     
                     // Handle window resize
                     window.addEventListener('resize', () => {
-                        MAX_CONTAINER_WIDTH = 0.8 * container.parentElement.offsetWidth;
+                        MAX_CONTAINER_WIDTH = (window.innerWidth < 768 ? 1 : 0.8) * container.parentElement.offsetWidth;
                         resizeMedia();
                     });
                 });
