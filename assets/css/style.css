@@ -299,12 +299,7 @@ html, body {
 
 
 @media (max-width: 480px) {
-  .about-banner {
-    height: calc(75vh - 1rem);
-  }
-  .contact-banner {
-    height: calc(25vh - 0.5rem);
-  }
+
   .about-description,
   .contact-text {
     font-size: 0.9rem;
@@ -816,10 +811,6 @@ html, body {
 }
 
 @media (max-width: 480px) {
-  .about-image {
-    width: 15vw;
-    max-width: 180px;
-  }
   
   .about-description {
     font-size: 0.9rem;
