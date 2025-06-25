@@ -199,6 +199,13 @@
     <script src="assets/js/main.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
+        const hamburger = document.getElementById('hamburger');
+        const dropdown = document.getElementById('navDropdown');
+        hamburger.addEventListener('click', function() {
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', String(!isExpanded));
+            dropdown.classList.toggle('show');
+        });
         const searchInput = document.getElementById("search");
         const projectButtons = document.querySelectorAll(".project-button");
 
