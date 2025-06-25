@@ -219,31 +219,31 @@
 	</head>
 	<body class="is-preload">
         <nav class="floating-nav">
-            <a href="#header" class="nav-logo"><b>INOO JO</b></a>
+            <a href="index.html#wrapper" class="nav-logo"><b>INOO JO</b></a>
 
             <div class="nav-buttons">
-            <a href="index.html#wrapper" class="nav-button"><b>Home</b></a>
-            <a href="index.html#about" class="nav-button"><b>About</b></a>
-            <a href="index.html#contact" class="nav-button"><b>Contact</b></a>
-            <a href="projects.html" class="nav-button"><b>Projects</b></a>
-            <a href="Inoo_Resume.pdf" target="_blank" class="nav-button"><b>Resume</b></a>
+                <a href="index.html#wrapper" class="nav-button"><b>Home</b></a>
+                <a href="index.html#about" class="nav-button"><b>About</b></a>
+                <a href="index.html#contact" class="nav-button"><b>Contact</b></a>
+                <a href="projects.html" class="nav-button"><b>Projects</b></a>
+                <a href="Inoo_Resume.pdf" target="_blank" class="nav-button"><b>Resume</b></a>
             </div>
 
             <button
-            class="hamburger"
-            id="hamburger"
-            aria-label="Toggle menu"
-            aria-expanded="false"
+                class="hamburger"
+                id="hamburger"
+                aria-label="Toggle menu"
+                aria-expanded="false"
             >
-            &#9776;
+                &#9776;
             </button>
 
             <div class="nav-dropdown" id="navDropdown">
-            <a href="index.html#wrapper"><b>Home</b></a>
-            <a href="index.html#about"><b>About</b></a>
-            <a href="index.html#contact"><b>Contact</b></a>
-            <a href="projects.html"><b>Projects</b></a>
-            <a href="Inoo_Resume.pdf" target="_blank"><b>Resume</b></a>
+                <a href="index.html#wrapper"><b>Home</b></a>
+                <a href="index.html#about"><b>About</b></a>
+                <a href="index.html#contact"><b>Contact</b></a>
+                <a href="projects.html"><b>Projects</b></a>
+                <a href="Inoo_Resume.pdf" target="_blank"><b>Resume</b></a>
             </div>
         </nav>
 
@@ -276,7 +276,7 @@
                 <h2 class="project-section-title">Project Summary</h2>
                 <div class="content-full">
                     <p class="section-description">
-                        This project engineered a 1-DOF stair-climbing robot initiating from 30° slanted stairs. We developed a custom 5-link leg mechanism optimized for stair geometry, prioritizing step clearance and stability. Through iterative prototyping, we evolved from failed TPU concepts to laser-cut film joints captured within resin components. The final 0.5 lb robot integrated 551 custom parts and replicated ideal leg trajectories, but couldn't climb due to joint deformation under load and insufficient motor torque.
+                        This project engineered a 1-DOF stair-climbing robot initiating from 30° slanted stairs. We developed a custom 5-link leg mechanism optimized for stair geometry, prioritizing step clearance and stability. Through iterative prototyping, we evolved from failed TPU concepts to laser-cut film joints captured within resin components. The final 0.81 lb robot integrated 551 custom parts and replicated ideal leg trajectories, but couldn't climb due to joint deformation under load and insufficient motor torque.
                     </p>
                 </div>
             </div>
@@ -290,7 +290,7 @@
                     <h3 class="section-subtitle">General Design Philosophy</h3>
                     <div class="content-full">
                         <p class="section-description">
-                            Compliant joints formed our breakthrough innovation, enabling an 80% weight reduction compared to bearing-based joints while eliminating shear forces through strategic in-plane flexion. Each joint served as a self-contained motion system, maintaining precise kinematics without metal components. Though stair climbing remained unrealized, the mechanism's flawless replication of complex 5-link motion validated compliant joints as a transformative alternative to traditional assemblies - a significant achievement in minimalist mechanism design.
+                            Compliant joints formed our breakthrough innovation, enabling an 80% weight reduction compared to bearing-based joints while eliminating shear forces through in-plane flexion. Each joint served as a self-contained motion system, maintaining precise kinematics without metal components. Though stair climbing was unrealized, the mechanism's replication of complex 5-link motion validated compliant joints as a transformative alternative to traditional assemblies - a significant achievement in minimalist mechanism design.
                         </p>
                         
                         <img src="images/stairClimber/noElectronics.webp" alt="Robot Mechanism" class="project-image">
@@ -461,6 +461,15 @@
         <!-- Fixed JavaScript for multiple containers -->
         <script>
             document.addEventListener('DOMContentLoaded', function() {
+                // Hamburger toggle
+                const hamburger = document.getElementById('hamburger');
+                const dropdown = document.getElementById('navDropdown');
+
+                hamburger.addEventListener('click', function() {
+                    const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                    this.setAttribute('aria-expanded', String(!isExpanded));
+                    dropdown.classList.toggle('show');
+                });
                 // Select all two-image containers
                 const containers = document.querySelectorAll('.two-image-container');
                 

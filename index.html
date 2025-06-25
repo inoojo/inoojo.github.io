@@ -91,32 +91,6 @@
   <script src="assets/js/main.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      // Scroll behavior for sections
-      const scrollSections = document.querySelector('.scroll-sections');
-      window.addEventListener('scroll', function() {
-        if (window.scrollY > 20) {
-          scrollSections.classList.add('visible');
-        } else {
-          scrollSections.classList.remove('visible');
-        }
-      });
-
-      // Smooth in-page anchor scrolling
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-          const targetId = this.getAttribute('href');
-          const targetEl = document.querySelector(targetId);
-          if (targetEl) {
-            e.preventDefault();
-            const navHeight = document.querySelector('.floating-nav').offsetHeight;
-            window.scrollTo({
-              top: targetEl.offsetTop - navHeight,
-              behavior: 'smooth'
-            });
-          }
-        });
-      });
-
       // Hamburger toggle
       const hamburger = document.getElementById('hamburger');
       const dropdown = document.getElementById('navDropdown');

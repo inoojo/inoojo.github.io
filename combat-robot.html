@@ -186,8 +186,16 @@
                 height: auto;
                 width: auto;
                 max-height: 100%;
+                margin-top: 1rem;
             }
             
+            .two-image-container .image-wrapper video {
+                object-fit: contain;
+                height: auto;
+                width: auto;
+                max-height: 100%;
+                margin-top: 1rem;
+            }
             /* Video container styles */
             .video-container {
                 position: relative;
@@ -219,31 +227,31 @@
 	</head>
 	<body class="is-preload">
         <nav class="floating-nav">
-            <a href="#header" class="nav-logo"><b>INOO JO</b></a>
+            <a href="index.html#wrapper" class="nav-logo"><b>INOO JO</b></a>
 
             <div class="nav-buttons">
-            <a href="index.html#wrapper" class="nav-button"><b>Home</b></a>
-            <a href="index.html#about" class="nav-button"><b>About</b></a>
-            <a href="index.html#contact" class="nav-button"><b>Contact</b></a>
-            <a href="projects.html" class="nav-button"><b>Projects</b></a>
-            <a href="Inoo_Resume.pdf" target="_blank" class="nav-button"><b>Resume</b></a>
+                <a href="index.html#wrapper" class="nav-button"><b>Home</b></a>
+                <a href="index.html#about" class="nav-button"><b>About</b></a>
+                <a href="index.html#contact" class="nav-button"><b>Contact</b></a>
+                <a href="projects.html" class="nav-button"><b>Projects</b></a>
+                <a href="Inoo_Resume.pdf" target="_blank" class="nav-button"><b>Resume</b></a>
             </div>
 
             <button
-            class="hamburger"
-            id="hamburger"
-            aria-label="Toggle menu"
-            aria-expanded="false"
+                class="hamburger"
+                id="hamburger"
+                aria-label="Toggle menu"
+                aria-expanded="false"
             >
-            &#9776;
+                &#9776;
             </button>
 
             <div class="nav-dropdown" id="navDropdown">
-            <a href="index.html#wrapper"><b>Home</b></a>
-            <a href="index.html#about"><b>About</b></a>
-            <a href="index.html#contact"><b>Contact</b></a>
-            <a href="projects.html"><b>Projects</b></a>
-            <a href="Inoo_Resume.pdf" target="_blank"><b>Resume</b></a>
+                <a href="index.html#wrapper"><b>Home</b></a>
+                <a href="index.html#about"><b>About</b></a>
+                <a href="index.html#contact"><b>Contact</b></a>
+                <a href="projects.html"><b>Projects</b></a>
+                <a href="Inoo_Resume.pdf" target="_blank"><b>Resume</b></a>
             </div>
         </nav>
 
@@ -266,7 +274,7 @@
                 <div class="description-container">
                     <h3 class="description-title">3lb Beetle-Weight Combat Robot</h3>
                     <p class="description-text">
-                        Designed and manufactured in 4 weeks to compete against 15 teams with a strict $300 budget. Featuring a UHMW frame, CNC-machined aluminum beater bar, and custom silicone foam wheels for maximum impact resistance and maneuverability.
+                        Designed and manufactured in 4 weeks to compete against 15 other teams with a strict $300 budget. Featuring a UHMW frame plated with stainless steel, CNC-machined aluminum beater bar, and a differential steering system for precise control and maneuverability.
                     </p>
                 </div>
             </div>
@@ -276,7 +284,7 @@
                 <h2 class="project-section-title">Project Summary</h2>
                 <div class="content-full">
                     <p class="section-description">
-                        This project engineered a 3lb beetle-weight combat robot to compete in the Texas Robo Rumble tournament. Facing predominantly vertical spinners and beater bars, we developed a resilient design featuring a UHMW frame milled on a Tormach 1100 CNC, silicone foam wheels cast in 3D-printed molds, and an aluminum beater bar with interchangeable steel screw teeth. Through four design iterations and topology optimization based on FEA, we achieved perfect weight distribution at 2.98 lbs. The robot placed 2nd out of 15 teams, demonstrating exceptional durability against opponent weapons.
+                        This project focused on developing a compact, highly robust robotic system for a competitive environment under tight constraints. Over a four-week period, we engineered a 3lb beetle-weight combat robot through multiple design iterations, integrating CNC-machined components, custom-molded parts, and FEA-driven optimization. The result was a durable and agile system that placed 2nd out of 16 teams, showcasing its effectiveness in real-world testing and combat performance.
                     </p>
                 </div>
             </div>
@@ -292,7 +300,10 @@
                     <h3 class="section-subtitle">Strategic Design Approach</h3>
                     <div class="content-full">
                         <p class="section-description">
-                            Facing vertical spinners within strict budget and weight constraints, we prioritized impact resistance and weight distribution. UHMW polyethylene was selected for its exceptional energy absorption properties (yield modulus), low density, and cost-effectiveness. For mobility, we developed silicone foam wheels cast in 3D-printed molds, optimizing for weight savings over maximum traction since pushing power was secondary to maneuverability in the arena. This material strategy saved 40% weight versus solid rubber alternatives while providing adequate traction.
+                            From the beginning, we recognized that material selection and frame construction would be the most critical factors in performance. We prioritized impact resistance and weight distribution, ultimately selecting UHMW polyethylene for the frame due to its excellent energy absorption (high yield strain), low density, and cost-effectiveness. For mobility, we initially developed custom silicone wheels cast in 3D-printed molds, but later replaced them due to weight constraints and the secondary role of traction in our competition strategy. This shift reduced wheel weight by 65%, while still providing sufficient grip for precise maneuvering.
+                        </p>
+                        <p class="section-description">
+                            To improve maintainability and field repairability, we adopted a modular frame architecture using machined aluminum angle brackets at the corners. Unlike a mono-part frame, this approach allowed for quick part replacement in the event of damage—crucial in a high-impact environment.
                         </p>
                         
                         <div class="two-image-container">
@@ -302,6 +313,7 @@
                             <div class="image-wrapper">
                                 <img src="images/combatRobot/final.webp" alt="Steel Teeth Detail">
                             </div>
+                            
                         </div>
                         <div class="image-caption">Early CAD design vs final bot</div>
 
@@ -314,18 +326,24 @@
                     <h3 class="section-subtitle">Weapon System Engineering</h3>
                     <div class="content-full">
                         <p class="section-description">
-                            The aluminum beater bar was engineered for optimal mass distribution - heavy enough to transfer kinetic energy but light enough to achieve rapid spin-up times. Starting with manual mill and dropsaw roughing, we finished the component using CNC machining for precision balancing. Threaded mounts allowed quick replacement of hardened steel screw teeth between matches, maintaining offensive capability throughout the tournament. Dynamic balancing ensured minimal vibration at operational RPMs.
+                            The aluminum beater bar was engineered for optimal mass distribution - heavy enough to transfer kinetic energy but light enough to achieve rapid spin-up times. Starting with manual mill and dropsaw roughing, we finished the component using CNC machining. Threaded mounts allowed quick replacement of hardened steel screw teeth between matches, maintaining offensive capability throughout the tournament. Dynamic balancing using the adjustable teeth allowed for minimal vibration at operational RPMs.
+
                         </p>
 
                         <div class="two-image-container">
                             <div class="image-wrapper">
-                                <img src="images/combatRobot/beaterBarDesign.webp" alt="Beater Bar Design">
+                                <img src="images/combatRobot/closeup.webp" alt="Beater Bar Design">
                             </div>
+
                             <div class="image-wrapper">
-                                <img src="images/combatRobot/teethDetail.webp" alt="Steel Teeth Detail">
+                                <video controls muted playsinline>
+                                    <source src="images/combatRobot/test.webm" type="video/webm">
+                                    Your browser does not support the video tag.
+                                </video>
                             </div>
+
                         </div>
-                        <div class="image-caption">Beater bar design and steel screw teeth detail</div>
+                        <div class="image-caption">Beater bar closeup and weapon test</div>
                     </div>
                 </div>
 
@@ -334,20 +352,23 @@
                     <h3 class="section-subtitle">Frame Development & Fabrication</h3>
                     <div class="content-full">
                         <p class="section-description">
-                            Laser-cut prototypes tested various side panel configurations, with topology optimization via finite element analysis guiding the final geometry to withstand cantilever forces. The UHMW frame was precision-milled on a Tormach 1100 CNC, creating interlocking joints that distributed impact energy across the structure. Steel side panels were added as sacrificial elements to protect critical electronics from direct hits.
+                            Laser-cut prototypes were used to test various side panel configurations, with finite element analysis informing our final frame geometry to withstand cantilevered loading. The UHMW chassis was CNC-milled on a Tormach 1100, and assembled using custom-machined aluminum corner brackets to ensure structural rigidity while allowing for quick disassembly and repair. Stainless steel side and rear panels were added to reinforce the frame and provide additional protection to critical components, significantly increasing the robot’s durability during direct impacts.
                         </p>
-                        <div class="image-grid">
-                            <div class="grid-item">
-                                <img src="images/combatRobot/laserPrototype.webp" alt="Laser Prototype">
+                        <div class="two-image-container">
+                            <div class="image-wrapper">
+                                <img src="images/combatRobot/mill.webp" alt="Beater Bar Design">
                             </div>
-                            <div class="grid-item">
-                                <img src="images/combatRobot/cncMilling.webp" alt="CNC Milling">
+                            <div class="image-wrapper">
+                                <img src="images/combatRobot/mounts.webp" alt="Steel Teeth Detail">
                             </div>
-                            <div class="grid-item">
-                                <img src="images/combatRobot/frameAssembly.webp" alt="Frame Assembly">
+                        </div>
+
+                        <div class="two-image-container">
+                            <div class="image-wrapper">
+                                <img src="images/combatRobot/wheel.webp" alt="Beater Bar Design">
                             </div>
-                            <div class="grid-item">
-                                <img src="images/combatRobot/electronicsLayout.webp" alt="Electronics Layout">
+                            <div class="image-wrapper">
+                                <img src="images/combatRobot/assemble.webp" alt="Steel Teeth Detail">
                             </div>
                         </div>
                         <div class="image-caption">Prototyping, milling, and assembly process</div>
@@ -359,22 +380,22 @@
                     <h3 class="section-subtitle">Tournament Performance</h3>
                     <div class="content-full">
                         <p class="section-description">
-                            In the Texas Robo Rumble, our robot demonstrated exceptional resilience against vertical spinners that destroyed other competitors' bots. Post-tournament inspection revealed only minor bite marks on the UHMW frame from opponent weapons, with all critical systems remaining operational through the semifinals. Our strategic design choices proved effective: the UHMW frame absorbed impacts without cracking, modular weapon teeth enabled rapid field repairs, and optimal weight distribution prevented flipping during high-G maneuvers.
+                            During the competition, our robot demonstrated outstanding durability under heavy impacts. Post-match inspections revealed only minor bite marks on the UHMW frame, with all core systems remaining fully operational through to the semifinals. The modular weapon teeth and frame design enabled quick field repairs between matches, helping us stay competitive under tight time constraints. Ultimately, we placed 2nd overall, with the final match lost due to a torn weapon belt that disabled our primary attack mechanism.
                         </p>
                         
                         <div class="highlight-box">
                             <p class="section-description">
-                                <b>Competition Result:</b> Placed 2nd out of 15 teams at Texas Robo Rumble, with the robot surviving direct hits from steel weapons that eliminated other competitors.
+                                <b>Competition Result:</b> Placed 2nd out of 16 teams at Texas Robo Rumble, with the robot surviving many direct hits from steel weapons that eliminated other competitors.
                             </p>
                         </div>
                         
                         <div class="video-container">
                         <video controls>
-                            <source src="images/combatRobot/competitionFootage.webm" type="video/mp4">
+                            <source src="images/combatRobot/fight.webm" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
                         </div>
-                        <div class="image-caption">Competition highlights showing resilience against opponent weapons</div>
+                        <div class="image-caption">Competition highlights</div>
                     </div>
                 </div>
             </div>
@@ -383,23 +404,21 @@
             <div class="project-section">
                 <h2 class="project-section-title">Key Takeaways & Skills Utilized</h2>
                 <p class="section-description">
-                    This project demonstrated that material selection and weight distribution matter more than absolute armor thickness in combat robotics. We learned that UHMW's impact absorption outperformed polycarbonate at similar weights despite costing 60% less, and that center-of-mass positioning was critical for resisting flipping. Budget management became an art form, with strategic splurges on steel teeth balanced by cost-saving 3D-printed wheel molds.
+                    Through this project, we learned that careful material selection is crucial—UHMW provided the best balance between density, cost, and impact absorption for combat robotics. We also discovered that weight distribution and center of mass placement are essential for stability and resisting flips. Managing a strict budget taught us how to prioritize spending strategically, investing in critical components like steel weapon teeth while saving weight and cost in other areas. Looking ahead, we recognize the need to select a stronger material for the weapon belt to improve durability and prevent failures like the one experienced in the finals.
                 </p>
                 
                 <div class="highlight-box">
                     <p class="section-description">
-                        <b>Engineering Insight:</b> The UHMW frame's performance redefined our approach to impact resistance - energy absorption through material deformation proved more effective than rigid protection against vertical spinners.
+                        <b>Engineering Insight:</b> The UHMW frame's performance redefined our approach to impact resistance - energy absorption through material deformation proved more effective than rigid protection against impact weapons.
                     </p>
                 </div>
                 
                 <h3 class="section-subtitle">Technical Skills Developed</h3>
                 <ul class="skills-list">
                     <li>CNC Machining (Tormach 1100)</li>
-                    <li>FEA-Based Topology Optimization</li>
                     <li>Dynamic Weapon Balancing</li>
                     <li>Silicone Molding & Composite Fabrication</li>
                     <li>BattleBots Rule-Compliant Design</li>
-                    <li>Electronics Hardening Against Impacts</li>
                     <li>Rapid Prototyping with Laser Cutting</li>
                     <li>Strategic Budget Management</li>
                 </ul>
@@ -416,9 +435,9 @@
                         Weight: 2.98 lbs | Weapon: Aluminum beater bar with steel teeth | Drive: 2-wheel silicone foam | Frame: UHMW with steel side panels | Speed: 15 mph | Weapon RPM: 8,000
                     </p>
                     <p class="section-description">
-                        For technical specifications, design files, or competition footage:
+                        Competition vod below:
                     </p>
-                    <a href="https://texasroborumble.com/results" 
+                    <a href="https://twitch.tv/texasbattlebots/home" 
                     target="_blank"
                     style="display: inline-block; 
                             margin-top: 0; 
@@ -443,69 +462,79 @@
         <!-- Fixed JavaScript for multiple containers -->
         <script>
             document.addEventListener('DOMContentLoaded', function() {
-                // Select all two-image containers
+                // Hamburger toggle
+                const hamburger = document.getElementById('hamburger');
+                const dropdown = document.getElementById('navDropdown');
+                hamburger.addEventListener('click', function() {
+                    const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                    this.setAttribute('aria-expanded', String(!isExpanded));
+                    dropdown.classList.toggle('show');
+                });
+                
+                // Media resizing for both images and videos
                 const containers = document.querySelectorAll('.two-image-container');
                 
                 containers.forEach(container => {
-                    // Get images within this container
-                    const images = container.querySelectorAll('.image-wrapper img');
+                    // Get media elements (both images and videos)
+                    const mediaElements = [
+                        container.querySelector('.image-wrapper:first-child > img, .image-wrapper:first-child > video'),
+                        container.querySelector('.image-wrapper:last-child > img, .image-wrapper:last-child > video')
+                    ];
                     
-                    if (!images || images.length < 2) {
-                        return;
-                    }
+                    if (!mediaElements[0] || !mediaElements[1]) return;
                     
-                    const image1 = images[0];
-                    const image2 = images[1];
-                    
-                    // Configuration
-                    const GAP = 15; // px
+                    const media1 = mediaElements[0];
+                    const media2 = mediaElements[1];
+                    const GAP = 15;
                     let MAX_CONTAINER_WIDTH = 0.8 * container.parentElement.offsetWidth;
                     
-                    // Function to resize images
-                    function resizeImages() {
-                        // Ensure images are loaded
-                        if (!image1.naturalWidth || !image2.naturalWidth || 
-                            image1.naturalWidth === 0 || image2.naturalWidth === 0) {
-                            return;
-                        }
-                        
-                        // Get aspect ratios
-                        const aspectRatio1 = image1.naturalWidth / image1.naturalHeight;
-                        const aspectRatio2 = image2.naturalWidth / image2.naturalHeight;
-                        
-                        // Calculate max height that fits in container
-                        const maxHeight = (MAX_CONTAINER_WIDTH - GAP) / (aspectRatio1 + aspectRatio2);
-                        
-                        // Set the same height for both images
-                        const commonHeight = Math.min(
-                            maxHeight,
-                            image1.naturalHeight,
-                            image2.naturalHeight
-                        );
-                        
-                        // Apply the height
-                        image1.style.height = `${commonHeight}px`;
-                        image2.style.height = `${commonHeight}px`;
+                    function getDimensions(media) {
+                        return new Promise(resolve => {
+                            // Handle images
+                            if (media.tagName === 'IMG') {
+                                if (media.complete) {
+                                    resolve({ width: media.naturalWidth, height: media.naturalHeight });
+                                } else {
+                                    media.onload = () => resolve({ width: media.naturalWidth, height: media.naturalHeight });
+                                }
+                            }
+                            // Handle videos
+                            else if (media.tagName === 'VIDEO') {
+                                if (media.readyState >= 2) { // HAVE_CURRENT_DATA
+                                    resolve({ width: media.videoWidth, height: media.videoHeight });
+                                } else {
+                                    media.onloadedmetadata = () => resolve({ width: media.videoWidth, height: media.videoHeight });
+                                }
+                            }
+                        });
                     }
                     
-                    // Initialize when images load
-                    function init() {
-                        if (image1.complete && image2.complete) {
-                            resizeImages();
-                        } else {
-                            image1.addEventListener('load', resizeImages);
-                            image2.addEventListener('load', resizeImages);
-                        }
+                    async function resizeMedia() {
+                        const dim1 = await getDimensions(media1);
+                        const dim2 = await getDimensions(media2);
+                        
+                        const aspectRatio1 = dim1.width / dim1.height;
+                        const aspectRatio2 = dim2.width / dim2.height;
+                        const maxHeight = (MAX_CONTAINER_WIDTH - GAP) / (aspectRatio1 + aspectRatio2);
+                        
+                        const commonHeight = Math.min(
+                            maxHeight,
+                            dim1.height,
+                            dim2.height
+                        );
+                        
+                        media1.style.height = `${commonHeight}px`;
+                        media2.style.height = `${commonHeight}px`;
                     }
+                    
+                    // Initialize
+                    resizeMedia();
                     
                     // Handle window resize
                     window.addEventListener('resize', () => {
                         MAX_CONTAINER_WIDTH = 0.8 * container.parentElement.offsetWidth;
-                        resizeImages();
+                        resizeMedia();
                     });
-                    
-                    // Start the process
-                    init();
                 });
             });
         </script>
