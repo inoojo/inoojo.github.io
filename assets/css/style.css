@@ -764,15 +764,6 @@ html, body {
     font-style: italic;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .two-image-container, .image-grid, .image-grid-container{
-        max-width: 100%;
-        margin: 0;
-    }
-    
-}
-
 
 
 /* Video container with responsive sizing */
@@ -808,6 +799,16 @@ html, body {
 .video-container video::-webkit-media-controls {
   border-radius: 0 0 8px 8px;
 }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .two-image-container, .image-grid, .image-grid-container, .video-container {
+        max-width: 100%;
+        margin: 0;
+    }
+    
+}
+
 
 /* Add this at the end of style.css */
 @media (max-width: 768px) {
