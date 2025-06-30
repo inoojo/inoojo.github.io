@@ -1,554 +1,533 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<title>Stair-Climbing Robot - Portfolio</title>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-		<link rel="stylesheet" href="assets/css/main.css">
-        <link rel="stylesheet" href="assets/css/style.css">
-        <style>
-            /* Only added necessary styles for the image-description container */
-            .image-description-container {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 30px;
-                margin: 0;
-            }
-            
-            .image-container {
-                flex: 0 0 calc(50% - 15px);
-                max-width: calc(50% - 15px);
-            }
-            
-            .description-container {
-                flex: 0 0 calc(50% - 15px);
-                max-width: calc(50% - 15px);
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-            }
-            
-            .description-title {
-                font-size: 1.5rem;
-                color: #6f8dd0;
-                margin-bottom: 15px;
-                font-weight: 600;
-                text-shadow: 0 2.5px 5px rgba(0, 0, 0, 0.7);
-            }
-            
-            .description-text {
-                font-size: 1.1rem;
-                line-height: 1.7;
-                color: #e0e0e0;
-            }
-            
-            /* Responsive adjustments */
-            @media (max-width: 768px) {
-                .image-container, 
-                .description-container {
-                    flex: 0 0 100%;
-                    max-width: 100%;
-                }
-            }
-            
-            /* All your original CSS remains intact below */
-            .project-banner {
-                margin-top: -3rem;
-                position: relative;
-            }
-            
-            .project-section {
-                margin-bottom: 0px;
-                padding-bottom: 0px;
-            }
-            
-            .project-section-title {
-                font-size: 1.5rem;
-                padding-bottom: 1rem;
-                color: #f0f0f0;
-                position: relative;
-                font-weight: 600;
-            }
-            
-            .project-section-title:after {
-                content: '';
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                width: 70px;
-                height: 4px;
-                background: #4b6cc1;
-                border-radius: 2px;
-            }
-            
-            .section-description {
-                font-size: 1rem;
-                line-height: 1.75;
-                color: #e0e0e0;
-            }
-            
-            .section-subtitle {
-                font-size: 1.2rem;
-                margin: 0;
-                color: #d0d0d0;
-                font-weight: 500;
-                padding-left: 15px;
-                border-left: 3px solid #4b6cc1;
-            }
-            
-            .section-description b {
-                color: #4b6cc1;
-                font-weight: 600;
-            }
-            
-            .content-full {
-                width: 100%;
-                margin-top: 1rem;
-            }
-            
-            .project-image {
-                max-width: 80%; /* Limits width to 80% of container */
-                width: auto; /* Allows natural width */
-                height: auto; /* Maintains aspect ratio */
-                display: block;
-                margin: 0 auto; /* Centers horizontally */
-                border-radius: 8px;
-                box-shadow: 0 5px 25px rgba(0,0,0,0.3);
-                border: 1px solid #444;
-            }
+<head>
+  <title>Stair-Climbing Robot - Portfolio</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    /* Only added necessary styles for the image-description container */
+    .image-description-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin: 0;
+    }
+    .image-container {
+      flex: 0 0 calc(50% - 15px);
+      max-width: calc(50% - 15px);
+    }
+    .description-container {
+      flex: 0 0 calc(50% - 15px);
+      max-width: calc(50% - 15px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .description-title {
+      font-size: 1.5rem;
+      color: #6f8dd0;
+      margin-bottom: 15px;
+      font-weight: 600;
+      text-shadow: 0 2.5px 5px rgba(0, 0, 0, 0.7);
+    }
+    .description-text {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: #e0e0e0;
+    }
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .image-container, 
+      .description-container {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+    }
+    /* All your original CSS remains intact below */
+    .project-banner {
+      margin-top: -3rem;
+      position: relative;
+    }
+    .project-section {
+      margin-bottom: 0px;
+      padding-bottom: 0px;
+    }
+    .project-section-title {
+      font-size: 1.5rem;
+      padding-bottom: 1rem;
+      color: #f0f0f0;
+      position: relative;
+      font-weight: 600;
+    }
+    .project-section-title:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 70px;
+      height: 4px;
+      background: #4b6cc1;
+      border-radius: 2px;
+    }
+    .section-description {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: #e0e0e0;
+    }
+    .section-subtitle {
+      font-size: 1.2rem;
+      margin: 0;
+      color: #d0d0d0;
+      font-weight: 500;
+      padding-left: 15px;
+      border-left: 3px solid #4b6cc1;
+    }
+    .section-description b {
+      color: #4b6cc1;
+      font-weight: 600;
+    }
+    .content-full {
+      width: 100%;
+      margin-top: 1rem;
+    }
+    .project-image {
+      max-width: 80%; /* Limits width to 80% of container */
+      width: auto;    /* Allows natural width */
+      height: auto;   /* Maintains aspect ratio */
+      display: block;
+      margin: 0 auto; /* Centers horizontally */
+      border-radius: 8px;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.3);
+      border: 1px solid #444;
+    }
+    @media (max-width: 768px) {
+      .project-image {
+        max-width: 100%;
+        margin: 0;
+      }
+    }
+    .key-takeaways {
+      padding: 30px 0;
+      margin: 40px 0;
+    }
+    .skills-list {
+      margin: 30px 0 0 0;
+      padding: 0;
+      list-style-type: none;
+    }
+    .skills-list li {
+      position: relative;
+      padding-left: 25px;
+      margin-bottom: 12px;
+      font-size: 1.1rem;
+      color: #e0e0e0;
+    }
+    .skills-list li:before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: #4b6cc1;
+      font-size: 1.4rem;
+      line-height: 1;
+    }
+    .contact-section {
+      text-align: center;
+      margin: 0px;
+      padding: 0px;
+      background-color: #1a1f2d;
+      border-radius: 10px;
+      border: 1px solid #2a3449;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.4);
+    }
+    .contact-section h3 {
+      font-size: 1.5rem;
+      color: #f0f0f0;
+      margin: 1rem 0;
+    }
+    .highlight-box {
+      background: rgba(75, 108, 193, 0.15);
+      padding: 25px;
+      border-radius: 10px;
+      border-left: 4px solid #4b6cc1;
+      margin: 30px 0;
+    }
+    .content-left, .content-right {
+      padding: 15px;
+    }
+    .divider {
+      height: 1px;
+      background: rgba(255,255,255,0.1);
+      margin: 35px 0;
+    }
+    /* Added for aspect ratio preservation */
+    .two-image-container .image-wrapper img {
+      object-fit: contain;
+      height: auto;
+      width: auto;
+      max-height: 100%;
+    }
+    /* Video container styles */
+    .video-container {
+      position: relative;
+      max-width: 80%;
+      width: 100%;
+      margin: 0 auto;
+      border-radius: 8px;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.3);
+      border: 1px solid #444;
+      overflow: hidden;
+    }
+    .video-container::before {
+      content: "";
+      display: block;
+      padding-top: 56.25%; /* 16:9 aspect ratio */
+    }
+    .video-container video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
+  <noscript><link rel="stylesheet" href="assets/css/noscript.css"></noscript>
+</head>
+<body class="is-preload">
+  <nav class="floating-nav">
+    <a href="index.html#wrapper" class="nav-logo"><b>INOO JO</b></a>
+    <div class="nav-buttons">
+      <a href="index.html#wrapper" class="nav-button"><b>Home</b></a>
+      <a href="index.html#about" class="nav-button"><b>About</b></a>
+      <a href="index.html#contact" class="nav-button"><b>Contact</b></a>
+      <a href="projects.html" class="nav-button"><b>Projects</b></a>
+      <a href="Inoo_Resume.pdf" target="_blank" class="nav-button"><b>Resume</b></a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      &#9776;
+    </button>
+    <div class="nav-dropdown" id="navDropdown">
+      <a href="index.html#wrapper"><b>Home</b></a>
+      <a href="index.html#about"><b>About</b></a>
+      <a href="index.html#contact"><b>Contact</b></a>
+      <a href="projects.html"><b>Projects</b></a>
+      <a href="Inoo_Resume.pdf" target="_blank"><b>Resume</b></a>
+    </div>
+  </nav>
 
-            @media (max-width: 768px) {
-                .project-image{
-                    max-width: 100%;
-                    margin: 0;
-                }
-                
-            }
-            
-            
-            .key-takeaways {
-                padding: 30px 0;
-                margin: 40px 0;
-            }
-            
-            .skills-list {
-                margin: 30px 0 0 0;
-                padding: 0;
-                list-style-type: none;
-            }
-            
-            .skills-list li {
-                position: relative;
-                padding-left: 25px;
-                margin-bottom: 12px;
-                font-size: 1.1rem;
-                color: #e0e0e0;
-            }
-            
-            .skills-list li:before {
-                content: '•';
-                position: absolute;
-                left: 0;
-                color: #4b6cc1;
-                font-size: 1.4rem;
-                line-height: 1;
-            }
-            
-            .contact-section {
-                text-align: center;
-                margin: 0px;
-                padding: 0px;
-                background-color: #1a1f2d;
-                border-radius: 10px;
-                border: 1px solid #2a3449;
-                box-shadow: 0 5px 25px rgba(0,0,0,0.4);
-            }
-            
-            .contact-section h3 {
-                font-size: 1.5rem;
-                color: #f0f0f0;
-                margin: 1rem 0;
-            }
+  <div class="project-banner">
+    <div class="project-title-section">
+      <h1>Stair-Climbing Robot</h1>
+      <div class="title-underline"></div>
+    </div>
 
-            .highlight-box {
-                background: rgba(75, 108, 193, 0.15);
-                padding: 25px;
-                border-radius: 10px;
-                border-left: 4px solid #4b6cc1;
-                margin: 30px 0;
-            }
-            
-            .content-left, .content-right {
-                padding: 15px;
-            }
-            
-            .divider {
-                height: 1px;
-                background: rgba(255,255,255,0.1);
-                margin: 35px 0;
-            }
-            
-            /* Added for aspect ratio preservation */
-            .two-image-container .image-wrapper img {
-                object-fit: contain;
-                height: auto;
-                width: auto;
-                max-height: 100%;
-            }
-            
-            /* Video container styles */
-            .video-container {
-                position: relative;
-                max-width: 80%;
-                width: 100%;
-                margin: 0 auto;
-                border-radius: 8px;
-                box-shadow: 0 5px 25px rgba(0,0,0,0.3);
-                border: 1px solid #444;
-                overflow: hidden;
-            }
-            
-            .video-container::before {
-                content: "";
-                display: block;
-                padding-top: 56.25%; /* 16:9 aspect ratio */
-            }
-            
-            .video-container video {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
-        </style>
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css"></noscript>
-	</head>
-	<body class="is-preload">
-        <nav class="floating-nav">
-            <a href="index.html#wrapper" class="nav-logo"><b>INOO JO</b></a>
-
-            <div class="nav-buttons">
-                <a href="index.html#wrapper" class="nav-button"><b>Home</b></a>
-                <a href="index.html#about" class="nav-button"><b>About</b></a>
-                <a href="index.html#contact" class="nav-button"><b>Contact</b></a>
-                <a href="projects.html" class="nav-button"><b>Projects</b></a>
-                <a href="Inoo_Resume.pdf" target="_blank" class="nav-button"><b>Resume</b></a>
-            </div>
-
-            <button
-                class="hamburger"
-                id="hamburger"
-                aria-label="Toggle menu"
-                aria-expanded="false"
-            >
-                &#9776;
-            </button>
-
-            <div class="nav-dropdown" id="navDropdown">
-                <a href="index.html#wrapper"><b>Home</b></a>
-                <a href="index.html#about"><b>About</b></a>
-                <a href="index.html#contact"><b>Contact</b></a>
-                <a href="projects.html"><b>Projects</b></a>
-                <a href="Inoo_Resume.pdf" target="_blank"><b>Resume</b></a>
-            </div>
-        </nav>
-
-        <div class="project-banner">
-            <div class="project-title-section">
-                <h1>Stair-Climbing Robot</h1>
-                <div class="title-underline"></div>
-            </div>
-
-            <!-- Only changed this section -->
-            <div class="image-description-container">
-                <div class="image-container">
-                    <img src="images/stairClimber/stairClimberMain.webp" alt="Robot Mechanism" class="image-left">
-                    <div class="image-caption">
-                        Animated assembly isometric view
-                    </div>
-                </div>
-                
-                <div class="description-container">
-                    <h3 class="description-title">Robot Mechanism Design Final Project</h3>
-                    <p class="description-text">
-                        A compliant mechanism designed to climb stairs, made with 551 custom parts and a 5-link leg mechanism. Focused on joint design and material selection to achieve a lightweight and efficient robot capable of replicating complex motion paths.
-                    </p>
-
-                </div>
-            </div>
-
-            <!-- Everything below remains unchanged -->
-            <div class="project-section">
-                <h2 class="project-section-title">Project Summary</h2>
-                <div class="content-full">
-                    <p class="section-description">
-                        This project engineered a 1-DOF stair-climbing robot initiating from 30° slanted stairs. We developed a custom 5-link leg mechanism optimized for stair geometry, prioritizing step clearance and stability. Through iterative prototyping, we evolved from failed TPU concepts to laser-cut film joints captured within resin components. The final 0.81 lb robot integrated 551 custom parts and replicated ideal leg trajectories, but couldn't climb due to joint deformation under load and insufficient motor torque.
-                    </p>
-                </div>
-            </div>
-
-            <div class="divider"></div>
-
-            <div class="project-section">
-                <h2 class="project-section-title">Project Overview</h2>
-
-                <div class="content-section">
-                    <h3 class="section-subtitle">General Design Philosophy</h3>
-                    <div class="content-full">
-                        <p class="section-description">
-                            Compliant joints formed our breakthrough innovation, enabling an 80% weight reduction compared to bearing-based joints while eliminating shear forces through in-plane flexion. Each joint served as a self-contained motion system, maintaining precise kinematics without metal components. Though stair climbing was unrealized, the mechanism's replication of complex 5-link motion validated compliant joints as a transformative alternative to traditional assemblies - a significant achievement in minimalist mechanism design.
-                        </p>
-                        
-                        <img src="images/stairClimber/noElectronics.webp" alt="Robot Mechanism" class="project-image">
-                        <div class="image-caption">Assembled mechanism without electronics</div>
-                    </div>
-                </div>
-
-                <div class="content-section">
-                    <h3 class="section-subtitle">Mechanism Design</h3>
-                    <div class="content-full">
-                        <p class="section-description">
-                            Our 5-link mechanism was inspired by an unnamed biomimetic system. Beginning with approximate dimensions, we iteratively refined link lengths to achieve three critical features: sustained flat ground contact during 50% of the cycle, reliable step-clearing profiles matching 30° stairs, and minimized joint angles to reduce film stress.
-                        </p>
-
-                        <div class="two-image-container">
-                            <div class="image-wrapper">
-                                <img src="images/stairClimber/animation.webp" alt="Robot Mechanism">
-                            </div>
-                            <div class="image-wrapper">
-                                <img src="images/stairClimber/path.webp" alt="Robot Mechanism">
-                            </div>
-                        </div>
-                        <div class="image-caption">Animation of the 5-bar linkage and variable paths</div>
-
-                        <p class="section-description">
-                            Joint design required exhaustive angle-range analysis. For each joint, we calculated minimum and maximum angles through kinematic simulations, engineered bisecting clamps spanning the complete motion arc, and ultimately adopted wood joinery-inspired interlocks that outperformed other designs in strength and reliability after multiple iterations.
-                        </p>
-                        <div class="image-grid">
-                            <div class="grid-item">
-                                <img src="images/stairClimber/a1.webp" alt="Joint Detail 1">
-                            </div>
-                            <div class="grid-item">
-                                <img src="images/stairClimber/a2.webp" alt="Joint Detail 2">
-                            </div>
-                            <div class="grid-item">
-                                <img src="images/stairClimber/a3.webp" alt="Joint Detail 3">
-                            </div>
-                            <div class="grid-item">
-                                <img src="images/stairClimber/a4.webp" alt="Joint Detail 4">
-                            </div>
-                        </div>
-                        <div class="image-caption">Analysis of joint angles</div>
-
-                        <img src="images/stairClimber/joint.webp" alt="Robot Mechanism" class="project-image">
-
-                        <div class="image-caption">Joint design iterations and final embedded 4-bar design</div>
-
-                    </div>
-
-                </div>
-
-                <div class="content-section">
-                    <h3 class="section-subtitle">Fabrication & Assembly</h3>
-                    <div class="content-full">
-                        <p class="section-description">
-                            Geometric dimensioning and tolerancing became critical at microscopic scales. SLA-printed joints achieved 50μm resolution, but curing variations caused dimensional drift requiring meticulous process control. Laser-cut film maintained ±0.05mm consistency - essential for 0.5mm-wide inserts. Post-processing proved vital with UV curing times optimized to minimize warping.
-                        </p>
-                        <div class="two-image-container">
-                            <div class="image-wrapper">
-                                <img src="images/stairClimber/resin.webp" alt="Robot Mechanism">
-                            </div>
-                            <div class="image-wrapper">
-                                <img src="images/stairClimber/film.webp" alt="Robot Mechanism">
-                            </div>
-                        </div>
-                        <div class="image-caption">Set of SLA parts and cut film pieces</div>
-
-                        <p class="section-description">
-                            Material selection balanced precision and practicality: SLA resin provided tight tolerances for joint clamps, FDM PLA with 5% infill optimized weight for structural links, and 0.2mm polyester film delivered edge consistency for flexures. This multi-material approach reduced resin usage by 60% while maintaining strength.
-                        </p>
-                        <img src="images/stairClimber/exploded.webp" alt="Robot Mechanism" class="project-image">
-
-                        <div class="image-caption">Exploded view of sample link</div>
-                        <p class="section-description">
-                            Micro-assembly demanded magnification tools to align 0.2mm films between resin components. Snap-fit stainless steel inserts secured interfaces, with each leg's 29 components requiring precision assembly.
-                        </p>
-
-
-                        <img src="images/stairClimber/assemble.webp" alt="Robot Mechanism" class="project-image">
-                        <div class="image-caption">Assembly table in operation</div>
-                    </div>
-                </div>
-
-                <div class="content-section">
-                    <h3 class="section-subtitle">Results & Limitations</h3>
-                    <div class="content-full">
-                        <p class="section-description">
-                            The robot achieved exceptional 1.7mm path-tracking accuracy, confirming the compliant joint concept. However, three fundamental limitations emerged: film joints failed at 0.82N·m (54% of required torque), adequate motors compromised joint integrity through added weight, and stability margins measured just 12° versus our 30° target. These interconnected challenges prevented stair climbing despite perfect kinematic performance.
-                        </p>
-                        
-                        <div class="highlight-box">
-                            <p class="section-description">
-                                <b>Key Achievement:</b> Despite not achieving full stair climbing capability, the project successfully validated the compliant joint concept, demonstrating that complex motion can be achieved without traditional bearings or metal components, while reducing weight by 80% compared to conventional designs.
-                            </p>
-                        </div>
-                        
-                        <div class="video-container">
-                        <video controls>
-                            <source src="images/stairClimber/vid.webm" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        </div>
-                        <div class="image-caption">Final robot prototype with 6-legged configuration weighing just 0.81 lbs</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-section">
-                <h2 class="project-section-title">Key Takeaways & Skills Utilized</h2>
-                <p class="section-description">
-                    This project demonstrated that compliant joints require simultaneous mitigation against shear, peel, and tension failure modes. We learned that motor selection must precede joint design for proper load matching, and that SLA processes require statistical tolerance analysis for microscale components.
-                </p>
-                
-                <div class="highlight-box">
-                    <p class="section-description">
-                        <b>Lesson Learned:</b> The project highlighted the critical importance of early joint strength validation and motor-weight tradeoffs. The 551-part assembly revealed challenges in Design for Manufacturing and Assembly (DFMA), where reducing part count would significantly improve future iterations.
-                    </p>
-                </div>
-                
-                <h3 class="section-subtitle">Key Skills Developed</h3>
-                <ul class="skills-list">
-                    <li>Kinematic Analysis</li>
-                    <li>Compliant Joint Design</li>
-                    <li>Multi-material 3D Printing</li>
-                    <li>SolidWorks Simulation</li>
-                    <li>Micro-Tolerance GD&T</li>
-                    <li>Finite Element Analysis</li>
-                    <li>Prototype Iteration</li>
-                    <li>Design for Manufacturing</li>
-                </ul>
-            </div>
-
-            <div class="divider"></div>
-
-            <div class="project-section">
-                <h2 class="project-section-title">Additional Information</h2>
-                <div class="contact-section">
-                    <h3>Project Details & Resources</h3>
-                    <p class="section-description">
-                        More information about the project can be found in the wiki below. For detailed technical specifications, CAD files, or project documentation, please contact 
-                        <a href="https://www.linkedin.com/in/inoo-jo-927570325/" target="_blank" style="color: #4b6cc1; text-decoration: none; font-weight: 600;">
-                            Inoo Jo
-                        </a>
-                    </p>
-                    <a href="https://cloud.wikis.utexas.edu/wiki/spaces/RMD/pages/335742706/20+-+Stair+Climbing+Robot" 
-                    target="_blank"
-                    style="display: inline-block; 
-                            margin-top: 0; 
-                            margin-bottom: 1rem; 
-                            padding: 10px 20px; 
-                            background: rgba(75, 108, 193, 0.2); 
-                            color: #f0f0f0; 
-                            text-decoration: none; 
-                            border-radius: 5px; 
-                            border: 1px solid #4b6cc1;
-                            transition: background 0.3s ease;
-                            font-weight: 600;">
-                        Robot Mechanism Design Wiki
-                    </a>
-
-                </div>
-            </div>
+    <!-- Only changed this section -->
+    <div class="image-description-container">
+      <div class="image-container">
+        <img
+          src="images/stairClimber/stairClimberMain.webp"
+          alt="stairClimberMain.gif"
+          class="image-left"
+          onerror="this.onerror=null; this.src='images/stairClimber/stairClimberMain.gif';"
+        >
+        <div class="image-caption">
+          Animated assembly isometric view
         </div>
+      </div>
+      <div class="description-container">
+        <h3 class="description-title">Robot Mechanism Design Final Project</h3>
+        <p class="description-text">
+          A compliant mechanism designed to climb stairs, made with 551 custom parts and a 5-link leg mechanism. Focused on joint design and material selection to achieve a lightweight and efficient robot capable of replicating complex motion paths.
+        </p>
+      </div>
+    </div>
 
-		<div id="bg2"></div>
+    <!-- Everything below remains unchanged except img/video fallbacks -->
+    <div class="project-section">
+      <h2 class="project-section-title">Project Summary</h2>
+      <div class="content-full">
+        <p class="section-description">
+          This project engineered a 1-DOF stair-climbing robot initiating from 30° slanted stairs. We developed a custom 5-link leg mechanism optimized for stair geometry, prioritizing step clearance and stability. Through iterative prototyping, we evolved from failed TPU concepts to laser-cut film joints captured within resin components. The final 0.81 lb robot integrated 551 custom parts and replicated ideal leg trajectories, but couldn't climb due to joint deformation under load and insufficient motor torque.
+        </p>
+      </div>
+    </div>
 
-        <!-- Fixed JavaScript for multiple containers -->
-        <!-- Fixed JavaScript for multiple containers -->
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                // Hamburger toggle
-                const hamburger = document.getElementById('hamburger');
-                const dropdown = document.getElementById('navDropdown');
+    <div class="divider"></div>
 
-                hamburger.addEventListener('click', function() {
-                    const isExpanded = this.getAttribute('aria-expanded') === 'true';
-                    this.setAttribute('aria-expanded', String(!isExpanded));
-                    dropdown.classList.toggle('show');
-                });
-                // Select all two-image containers
-                const containers = document.querySelectorAll('.two-image-container');
-                
-                containers.forEach(container => {
-                    // Get images within this container
-                    const images = container.querySelectorAll('.image-wrapper img');
-                    
-                    if (!images || images.length < 2) {
-                        return;
-                    }
-                    
-                    const image1 = images[0];
-                    const image2 = images[1];
-                    
-                    // Configuration
-                    const GAP = 15; // px
-                    let MAX_CONTAINER_WIDTH = (window.innerWidth < 768 ? 1 : 0.8) * container.parentElement.offsetWidth;
-                    
-                    // Function to resize images
-                    function resizeImages() {
-                        // Ensure images are loaded
-                        if (!image1.naturalWidth || !image2.naturalWidth || 
-                            image1.naturalWidth === 0 || image2.naturalWidth === 0) {
-                            return;
-                        }
-                        
-                        // Get aspect ratios
-                        const aspectRatio1 = image1.naturalWidth / image1.naturalHeight;
-                        const aspectRatio2 = image2.naturalWidth / image2.naturalHeight;
-                        
-                        // Calculate max height that fits in container
-                        const maxHeight = (MAX_CONTAINER_WIDTH - GAP) / (aspectRatio1 + aspectRatio2);
-                        
-                        // Set the same height for both images
-                        const commonHeight = Math.min(
-                            maxHeight,
-                            image1.naturalHeight,
-                            image2.naturalHeight
-                        );
-                        
-                        // Apply the height
-                        image1.style.height = `${commonHeight}px`;
-                        image2.style.height = `${commonHeight}px`;
-                    }
-                    
-                    // Initialize when images load
-                    function init() {
-                        if (image1.complete && image2.complete) {
-                            resizeImages();
-                        } else {
-                            image1.addEventListener('load', resizeImages);
-                            image2.addEventListener('load', resizeImages);
-                        }
-                    }
-                    
-                    // Handle window resize
-                    window.addEventListener('resize', () => {
-                        MAX_CONTAINER_WIDTH = (window.innerWidth < 768 ? 1 : 0.8) * container.parentElement.offsetWidth;
-                        resizeImages();
-                    });
-                    
-                    // Start the process
-                    init();
-                });
-            });
-        </script>
+    <div class="project-section">
+      <h2 class="project-section-title">Project Overview</h2>
 
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
-	</body>
+      <div class="content-section">
+        <h3 class="section-subtitle">General Design Philosophy</h3>
+        <div class="content-full">
+          <p class="section-description">
+            Compliant joints formed our breakthrough innovation, enabling an 80% weight reduction compared to bearing-based joints while eliminating shear forces through in-plane flexion. Each joint served as a self-contained motion system, maintaining precise kinematics without metal components. Though stair climbing was unrealized, the mechanism's replication of complex 5-link motion validated compliant joints as a transformative alternative to traditional assemblies - a significant achievement in minimalist mechanism design.
+          </p>
+          <img
+            src="images/stairClimber/noElectronics.webp"
+            alt="noElectronics.jpg"
+            class="project-image"
+            onerror="this.onerror=null; this.src='images/stairClimber/noElectronics.jpg';"
+          >
+          <div class="image-caption">Assembled mechanism without electronics</div>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h3 class="section-subtitle">Mechanism Design</h3>
+        <div class="content-full">
+          <p class="section-description">
+            Our 5-link mechanism was inspired by an unnamed biomimetic system. Beginning with approximate dimensions, we iteratively refined link lengths to achieve three critical features: sustained flat ground contact during 50% of the cycle, reliable step-clearing profiles matching 30° stairs, and minimized joint angles to reduce film stress.
+          </p>
+
+          <div class="two-image-container">
+            <div class="image-wrapper">
+              <img
+                src="images/stairClimber/animation.webp"
+                alt="animation.gif"
+                onerror="this.onerror=null; this.src='images/stairClimber/animation.gif';"
+              >
+            </div>
+            <div class="image-wrapper">
+              <img
+                src="images/stairClimber/path.webp"
+                alt="path.jpg"
+                onerror="this.onerror=null; this.src='images/stairClimber/path.jpg';"
+              >
+            </div>
+          </div>
+          <div class="image-caption">Animation of the 5-bar linkage and variable paths</div>
+
+          <p class="section-description">
+            Joint design required exhaustive angle-range analysis. For each joint, we calculated minimum and maximum angles through kinematic simulations, engineered bisecting clamps spanning the complete motion arc, and ultimately adopted wood joinery-inspired interlocks that outperformed other designs in strength and reliability after multiple iterations.
+          </p>
+          <div class="image-grid">
+            <div class="grid-item">
+              <img
+                src="images/stairClimber/a1.webp"
+                alt="a1.jpg"
+                onerror="this.onerror=null; this.src='images/stairClimber/a1.jpg';"
+              >
+            </div>
+            <div class="grid-item">
+              <img
+                src="images/stairClimber/a2.webp"
+                alt="a2.jpg"
+                onerror="this.onerror=null; this.src='images/stairClimber/a2.jpg';"
+              >
+            </div>
+            <div class="grid-item">
+              <img
+                src="images/stairClimber/a3.webp"
+                alt="a3.jpg"
+                onerror="this.onerror=null; this.src='images/stairClimber/a3.jpg';"
+              >
+            </div>
+            <div class="grid-item">
+              <img
+                src="images/stairClimber/a4.webp"
+                alt="a4.jpg"
+                onerror="this.onerror=null; this.src='images/stairClimber/a4.jpg';"
+              >
+            </div>
+          </div>
+          <div class="image-caption">Analysis of joint angles</div>
+
+          <img
+            src="images/stairClimber/joint.webp"
+            alt="joint.jpg"
+            class="project-image"
+            onerror="this.onerror=null; this.src='images/stairClimber/joint.jpg';"
+          >
+          <div class="image-caption">Joint design iterations and final embedded 4-bar design</div>
+
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h3 class="section-subtitle">Fabrication & Assembly</h3>
+        <div class="content-full">
+          <p class="section-description">
+            Geometric dimensioning and tolerancing became critical at microscopic scales. SLA-printed joints achieved 50μm resolution, but curing variations caused dimensional drift requiring meticulous process control. Laser-cut film maintained ±0.05mm consistency - essential for 0.5mm-wide inserts. Post-processing proved vital with UV curing times optimized to minimize warping.
+          </p>
+          <div class="two-image-container">
+            <div class="image-wrapper">
+              <img
+                src="images/stairClimber/resin.webp"
+                alt="resin.jpg"
+                onerror="this.onerror=null; this.src='images/stairClimber/resin.jpg';"
+              >
+            </div>
+            <div class="image-wrapper">
+              <img
+                src="images/stairClimber/film.webp"
+                alt="film.jpg"
+                onerror="this.onerror=null; this.src='images/stairClimber/film.jpg';"
+              >
+            </div>
+          </div>
+          <div class="image-caption">Set of SLA parts and cut film pieces</div>
+
+          <p class="section-description">
+            Material selection balanced precision and practicality: SLA resin provided tight tolerances for joint clamps, FDM PLA with 5% infill optimized weight for structural links, and 0.2mm polyester film delivered edge consistency for flexures. This multi-material approach reduced resin usage by 60% while maintaining strength.
+          </p>
+          <img
+            src="images/stairClimber/exploded.webp"
+            alt="exploded.jpg"
+            class="project-image"
+            onerror="this.onerror=null; this.src='images/stairClimber/exploded.jpg';"
+          >
+          <div class="image-caption">Exploded view of sample link</div>
+
+          <p class="section-description">
+            Micro-assembly demanded magnification tools to align 0.2mm films between resin components. Snap-fit stainless steel inserts secured interfaces, with each leg's 29 components requiring precision assembly.
+          </p>
+
+          <img
+            src="images/stairClimber/assemble.webp"
+            alt="assemble.jpg"
+            class="project-image"
+            onerror="this.onerror=null; this.src='images/stairClimber/assemble.jpg';"
+          >
+          <div class="image-caption">Assembly table in operation</div>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h3 class="section-subtitle">Results & Limitations</h3>
+        <div class="content-full">
+          <p class="section-description">
+            The robot achieved exceptional 1.7mm path-tracking accuracy, confirming the compliant joint concept. However, three fundamental limitations emerged: film joints failed at 0.82N·m (54% of required torque), adequate motors compromised joint integrity through added weight, and stability margins measured just 12° versus our 30° target. These interconnected challenges prevented stair climbing despite perfect kinematic performance.
+          </p>
+
+          <div class="highlight-box">
+            <p class="section-description">
+              <b>Key Achievement:</b> Despite not achieving full stair climbing capability, the project successfully validated the compliant joint concept, demonstrating that complex motion can be achieved without traditional bearings or metal components, while reducing weight by 80% compared to conventional designs.
+            </p>
+          </div>
+
+          <div class="video-container">
+            <video controls>
+              <source src="images/stairClimber/vid.webm" type="video/webm">
+              <source src="images/stairClimber/vid.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <div class="image-caption">Final robot prototype with 6-legged configuration weighing just 0.81 lbs</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-section">
+      <h2 class="project-section-title">Key Takeaways & Skills Utilized</h2>
+      <p class="section-description">
+        This project demonstrated that compliant joints require simultaneous mitigation against shear, peel, and tension failure modes. We learned that motor selection must precede joint design for proper load matching, and that SLA processes require statistical tolerance analysis for microscale components.
+      </p>
+
+      <div class="highlight-box">
+        <p class="section-description">
+          <b>Lesson Learned:</b> The project highlighted the critical importance of early joint strength validation and motor-weight tradeoffs. The 551-part assembly revealed challenges in Design for Manufacturing and Assembly (DFMA), where reducing part count would significantly improve future iterations.
+        </p>
+      </div>
+
+      <h3 class="section-subtitle">Key Skills Developed</h3>
+      <ul class="skills-list">
+        <li>Kinematic Analysis</li>
+        <li>Compliant Joint Design</li>
+        <li>Multi-material 3D Printing</li>
+        <li>SolidWorks Simulation</li>
+        <li>Micro-Tolerance GD&T</li>
+        <li>Finite Element Analysis</li>
+        <li>Prototype Iteration</li>
+        <li>Design for Manufacturing</li>
+      </ul>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="project-section">
+      <h2 class="project-section-title">Additional Information</h2>
+      <div class="contact-section">
+        <h3>Project Details & Resources</h3>
+        <p class="section-description">
+          More information about the project can be found in the wiki below. For detailed technical specifications, CAD files, or project documentation, please contact 
+          <a href="https://www.linkedin.com/in/inoo-jo-927570325/" target="_blank" style="color: #4b6cc1; text-decoration: none; font-weight: 600;">
+            Inoo Jo
+          </a>
+        </p>
+        <a href="https://cloud.wikis.utexas.edu/wiki/spaces/RMD/pages/335742706/20+-+Stair+Climbing+Robot" 
+          target="_blank"
+          style="display: inline-block; 
+                 margin-top: 0; 
+                 margin-bottom: 1rem; 
+                 padding: 10px 20px; 
+                 background: rgba(75, 108, 193, 0.2); 
+                 color: #f0f0f0; 
+                 text-decoration: none; 
+                 border-radius: 5px; 
+                 border: 1px solid #4b6cc1;
+                 transition: background 0.3s ease;
+                 font-weight: 600;">
+          Robot Mechanism Design Wiki
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div id="bg2"></div>
+
+  <!-- Fixed JavaScript for multiple containers -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Hamburger toggle
+      const hamburger = document.getElementById('hamburger');
+      const dropdown = document.getElementById('navDropdown');
+      hamburger.addEventListener('click', function() {
+        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', String(!isExpanded));
+        dropdown.classList.toggle('show');
+      });
+
+      // Select all two-image containers
+      const containers = document.querySelectorAll('.two-image-container');
+      containers.forEach(container => {
+        const images = container.querySelectorAll('.image-wrapper img');
+        if (!images || images.length < 2) return;
+        const image1 = images[0];
+        const image2 = images[1];
+        const GAP = 15; // px
+        let MAX_CONTAINER_WIDTH = (window.innerWidth < 768 ? 1 : 0.8) * container.parentElement.offsetWidth;
+        function resizeImages() {
+          if (!image1.naturalWidth || !image2.naturalWidth) return;
+          const aspectRatio1 = image1.naturalWidth / image1.naturalHeight;
+          const aspectRatio2 = image2.naturalWidth / image2.naturalHeight;
+          const maxHeight = (MAX_CONTAINER_WIDTH - GAP) / (aspectRatio1 + aspectRatio2);
+          const commonHeight = Math.min(maxHeight, image1.naturalHeight, image2.naturalHeight);
+          image1.style.height = `${commonHeight}px`;
+          image2.style.height = `${commonHeight}px`;
+        }
+        function init() {
+          if (image1.complete && image2.complete) resizeImages();
+          else {
+            image1.addEventListener('load', resizeImages);
+            image2.addEventListener('load', resizeImages);
+          }
+        }
+        window.addEventListener('resize', () => {
+          MAX_CONTAINER_WIDTH = (window.innerWidth < 768 ? 1 : 0.8) * container.parentElement.offsetWidth;
+          resizeImages();
+        });
+        init();
+      });
+    });
+  </script>
+
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
 </html>
