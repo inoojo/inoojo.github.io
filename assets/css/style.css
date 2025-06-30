@@ -732,8 +732,7 @@ html, body {
 }
 
 .image-wrapper {
-    display: flex;
-    flex-direction: column;
+
 }
 
 .image-wrapper img {

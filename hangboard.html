@@ -1,539 +1,495 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<title>Hangboard - Portfolio</title>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-		<link rel="stylesheet" href="assets/css/main.css">
-        <link rel="stylesheet" href="assets/css/style.css">
-        <style>
-            .spec-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-                gap: 20px;
-                margin: 30px 0;
-            }
-            
-            .spec-card {
-                background: rgba(30, 35, 50, 0.7);
-                border-radius: 8px;
-                padding: 20px;
-                border: 1px solid #444;
-                text-align: center;
-            }
-            
-            .spec-value {
-                font-size: 1.8rem;
-                color: #d4af37;
-                font-weight: 600;
-                margin: 10px 0;
-            }
-                        /* Only added necessary styles for the image-description container */
-            .image-description-container {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 30px;
-                margin: 0;
-            }
-            
-            .image-container {
-                flex: 0 0 calc(50% - 15px);
-                max-width: calc(50% - 15px);
-            }
-            
-            .description-container {
-                flex: 0 0 calc(50% - 15px);
-                max-width: calc(50% - 15px);
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-            }
-            
-            .description-title {
-                font-size: 1.5rem;
-                color: #6f8dd0;
-                margin-bottom: 15px;
-                font-weight: 600;
-                text-shadow: 0 2.5px 5px rgba(0, 0, 0, 0.7);
-            }
-            
-            .description-text {
-                font-size: 1.1rem;
-                line-height: 1.7;
-                color: #e0e0e0;
-            }
-            
-            /* Responsive adjustments */
-            @media (max-width: 768px) {
-                .image-container, 
-                .description-container {
-                    flex: 0 0 100%;
-                    max-width: 100%;
-                }
-            }
-            
-            /* All your original CSS remains intact below */
-            .project-banner {
-                margin-top: -3rem;
-                position: relative;
-            }
-            
-            .project-section {
-                margin-bottom: 0px;
-                padding-bottom: 0px;
-            }
-            
-            .project-section-title {
-                font-size: 1.5rem;
-                padding-bottom: 1rem;
-                color: #f0f0f0;
-                position: relative;
-                font-weight: 600;
-            }
-            
-            .project-section-title:after {
-                content: '';
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                width: 70px;
-                height: 4px;
-                background: #4b6cc1;
-                border-radius: 2px;
-            }
-            
-            .section-description {
-                font-size: 1rem;
-                line-height: 1.75;
-                color: #e0e0e0;
-            }
-            
-            .section-subtitle {
-                font-size: 1.2rem;
-                margin: 0;
-                color: #d0d0d0;
-                font-weight: 500;
-                padding-left: 15px;
-                border-left: 3px solid #4b6cc1;
-            }
-            
-            .section-description b {
-                color: #4b6cc1;
-                font-weight: 600;
-            }
-            
-            .content-full {
-                width: 100%;
-                margin-top: 1rem;
-            }
-            
-            .project-image {
-                max-width: 80%; /* Limits width to 80% of container */
-                width: auto; /* Allows natural width */
-                height: auto; /* Maintains aspect ratio */
-                display: block;
-                margin: 0 auto; /* Centers horizontally */
-                border-radius: 8px;
-                box-shadow: 0 5px 25px rgba(0,0,0,0.3);
-                border: 1px solid #444;
-            }
+<head>
+  <title>Hangboard - Portfolio</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .spec-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin: 30px 0;
+    }
+    .spec-card {
+      background: rgba(30, 35, 50, 0.7);
+      border-radius: 8px;
+      padding: 20px;
+      border: 1px solid #444;
+      text-align: center;
+    }
+    .spec-value {
+      font-size: 1.8rem;
+      color: #d4af37;
+      font-weight: 600;
+      margin: 10px 0;
+    }
+    .image-description-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin: 0;
+    }
+    .image-container {
+      flex: 0 0 calc(50% - 15px);
+      max-width: calc(50% - 15px);
+    }
+    .description-container {
+      flex: 0 0 calc(50% - 15px);
+      max-width: calc(50% - 15px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .description-title {
+      font-size: 1.5rem;
+      color: #6f8dd0;
+      margin-bottom: 15px;
+      font-weight: 600;
+      text-shadow: 0 2.5px 5px rgba(0, 0, 0, 0.7);
+    }
+    .description-text {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: #e0e0e0;
+    }
+    @media (max-width: 768px) {
+      .image-container,
+      .description-container {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+    }
+    .project-banner {
+      margin-top: -3rem;
+      position: relative;
+    }
+    .project-section {
+      margin-bottom: 0px;
+      padding-bottom: 0px;
+    }
+    .project-section-title {
+      font-size: 1.5rem;
+      padding-bottom: 1rem;
+      color: #f0f0f0;
+      position: relative;
+      font-weight: 600;
+    }
+    .project-section-title:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 70px;
+      height: 4px;
+      background: #4b6cc1;
+      border-radius: 2px;
+    }
+    .section-description {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: #e0e0e0;
+    }
+    .section-subtitle {
+      font-size: 1.2rem;
+      margin: 0;
+      color: #d0d0d0;
+      font-weight: 500;
+      padding-left: 15px;
+      border-left: 3px solid #4b6cc1;
+    }
+    .section-description b {
+      color: #4b6cc1;
+      font-weight: 600;
+    }
+    .content-full {
+      width: 100%;
+      margin-top: 1rem;
+    }
+    .project-image {
+      max-width: 80%;
+      width: auto;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      border-radius: 8px;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.3);
+      border: 1px solid #444;
+    }
+    @media (max-width: 768px) {
+      .project-image {
+        max-width: 100%;
+        margin: 0;
+      }
+    }
+    .key-takeaways {
+      padding: 30px 0;
+      margin: 40px 0;
+    }
+    .skills-list {
+      margin: 30px 0 0 0;
+      padding: 0;
+      list-style-type: none;
+    }
+    .skills-list li {
+      position: relative;
+      padding-left: 25px;
+      margin-bottom: 12px;
+      font-size: 1.1rem;
+      color: #e0e0e0;
+    }
+    .skills-list li:before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: #4b6cc1;
+      font-size: 1.4rem;
+      line-height: 1;
+    }
+    .contact-section {
+      text-align: center;
+      margin: 0px;
+      padding: 0px;
+      background-color: #1a1f2d;
+      border-radius: 10px;
+      border: 1px solid #2a3449;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.4);
+    }
+    .contact-section h3 {
+      font-size: 1.5rem;
+      color: #f0f0f0;
+      margin: 1rem 0;
+    }
+    .highlight-box {
+      background: rgba(75, 108, 193, 0.15);
+      padding: 25px;
+      border-radius: 10px;
+      border-left: 4px solid #4b6cc1;
+      margin: 30px 0;
+    }
+    .content-left, .content-right {
+      padding: 15px;
+    }
+    .divider {
+      height: 1px;
+      background: rgba(255,255,255,0.1);
+      margin: 35px 0;
+    }
+    .two-image-container .image-wrapper img {
+      object-fit: contain;
+      height: auto;
+      width: auto;
+      max-height: 100%;
+      margin-top: 1rem;
+    }
+    .two-image-container .image-wrapper video {
+      object-fit: contain;
+      height: auto;
+      width: auto;
+      max-height: 100%;
+      margin-top: 1rem;
+    }
+    .video-container {
+      position: relative;
+      max-width: 80%;
+      width: 100%;
+      margin: 0 auto;
+      border-radius: 8px;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.3);
+      border: 1px solid #444;
+      overflow: hidden;
+    }
+    .video-container::before {
+      content: "";
+      display: block;
+      padding-top: 56.25%;
+    }
+    .video-container video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
+  <noscript><link rel="stylesheet" href="assets/css/noscript.css"></noscript>
+</head>
+<body class="is-preload wood-grain-bg">
+  <nav class="floating-nav">
+    <a href="index.html#wrapper" class="nav-logo"><b>INOO JO</b></a>
+    <div class="nav-buttons">
+      <a href="index.html#wrapper" class="nav-button"><b>Home</b></a>
+      <a href="index.html#about" class="nav-button"><b>About</b></a>
+      <a href="index.html#contact" class="nav-button"><b>Contact</b></a>
+      <a href="projects.html" class="nav-button"><b>Projects</b></a>
+      <a href="Inoo_Resume.pdf" target="_blank" class="nav-button"><b>Resume</b></a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      &#9776;
+    </button>
+    <div class="nav-dropdown" id="navDropdown">
+      <a href="index.html#wrapper"><b>Home</b></a>
+      <a href="index.html#about"><b>About</b></a>
+      <a href="index.html#contact"><b>Contact</b></a>
+      <a href="projects.html"><b>Projects</b></a>
+      <a href="Inoo_Resume.pdf" target="_blank"><b>Resume</b></a>
+    </div>
+  </nav>
 
-            @media (max-width: 768px) {
-                .project-image{
-                    max-width: 100%;
-                    margin: 0;
-                }
-                
-            }
-            
-            
-            .key-takeaways {
-                padding: 30px 0;
-                margin: 40px 0;
-            }
-            
-            .skills-list {
-                margin: 30px 0 0 0;
-                padding: 0;
-                list-style-type: none;
-            }
-            
-            .skills-list li {
-                position: relative;
-                padding-left: 25px;
-                margin-bottom: 12px;
-                font-size: 1.1rem;
-                color: #e0e0e0;
-            }
-            
-            .skills-list li:before {
-                content: '•';
-                position: absolute;
-                left: 0;
-                color: #4b6cc1;
-                font-size: 1.4rem;
-                line-height: 1;
-            }
-            
-            .contact-section {
-                text-align: center;
-                margin: 0px;
-                padding: 0px;
-                background-color: #1a1f2d;
-                border-radius: 10px;
-                border: 1px solid #2a3449;
-                box-shadow: 0 5px 25px rgba(0,0,0,0.4);
-            }
-            
-            .contact-section h3 {
-                font-size: 1.5rem;
-                color: #f0f0f0;
-                margin: 1rem 0;
-            }
+  <div class="project-banner">
+    <div class="project-title-section">
+      <h1>Custom Hangboard</h1>
+      <div class="title-underline"></div>
+    </div>
 
-            .highlight-box {
-                background: rgba(75, 108, 193, 0.15);
-                padding: 25px;
-                border-radius: 10px;
-                border-left: 4px solid #4b6cc1;
-                margin: 30px 0;
-            }
-            
-            .content-left, .content-right {
-                padding: 15px;
-            }
-            
-            .divider {
-                height: 1px;
-                background: rgba(255,255,255,0.1);
-                margin: 35px 0;
-            }
-            
-            /* Added for aspect ratio preservation */
-            .two-image-container .image-wrapper img {
-                object-fit: contain;
-                height: auto;
-                width: auto;
-                max-height: 100%;
-                margin-top: 1rem;
-            }
-            
-            .two-image-container .image-wrapper video {
-                object-fit: contain;
-                height: auto;
-                width: auto;
-                max-height: 100%;
-                margin-top: 1rem;
-            }
-            /* Video container styles */
-            .video-container {
-                position: relative;
-                max-width: 80%;
-                width: 100%;
-                margin: 0 auto;
-                border-radius: 8px;
-                box-shadow: 0 5px 25px rgba(0,0,0,0.3);
-                border: 1px solid #444;
-                overflow: hidden;
-            }
-            
-            .video-container::before {
-                content: "";
-                display: block;
-                padding-top: 56.25%; /* 16:9 aspect ratio */
-            }
-            
-            .video-container video {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
-        </style>
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css"></noscript>
-	</head>
-	<body class="is-preload wood-grain-bg">
-        <nav class="floating-nav">
-            <a href="index.html#wrapper" class="nav-logo"><b>INOO JO</b></a>
-
-            <div class="nav-buttons">
-                <a href="index.html#wrapper" class="nav-button"><b>Home</b></a>
-                <a href="index.html#about" class="nav-button"><b>About</b></a>
-                <a href="index.html#contact" class="nav-button"><b>Contact</b></a>
-                <a href="projects.html" class="nav-button"><b>Projects</b></a>
-                <a href="Inoo_Resume.pdf" target="_blank" class="nav-button"><b>Resume</b></a>
-            </div>
-
-            <button
-                class="hamburger"
-                id="hamburger"
-                aria-label="Toggle menu"
-                aria-expanded="false"
-            >
-                &#9776;
-            </button>
-
-            <div class="nav-dropdown" id="navDropdown">
-                <a href="index.html#wrapper"><b>Home</b></a>
-                <a href="index.html#about"><b>About</b></a>
-                <a href="index.html#contact"><b>Contact</b></a>
-                <a href="projects.html"><b>Projects</b></a>
-                <a href="Inoo_Resume.pdf" target="_blank"><b>Resume</b></a>
-            </div>
-        </nav>
-
-        <div class="project-banner">
-            <div class="project-title-section">
-                <h1>Custom Hangboard</h1>
-                <div class="title-underline"></div>
-            </div>
-
-            <div class="image-description-container">
-                <div class="image-container">
-                    <img src="images/hangBoard/hang.webp" alt="Hangboard Design" class="image-left">
-                    <div class="image-caption">
-                        Hangboard mounted on C-channel frame CAD
-                    </div>
-                </div>
-                
-                <div class="description-container">
-                    <h3 class="description-title">Engineered Climbing Training Tool</h3>
-                    <p class="description-text">
-                        Designed and fabricated a structural hangboard with a minimum Factor of Safety of 5, featuring precision dovetail joints, ergonomic holds, and optimized for mounting on a 1-1/4″ x 5/8″ cold rolled C-channel frame.
-                    </p>
-                </div>
-            </div>
-
-            <div class="project-section">
-                <h2 class="project-section-title">Project Summary</h2>
-                <div class="content-full">
-                    <p class="section-description">
-                        This project involved the design and fabrication of a custom climbing hangboard intended for use at my workplace, Texas Inventionworks. Hangboards are essential for training finger strength in climbing, but many commercial models have ergonomic limitations—specifically, symmetric hold layouts that result in uneven hand spacing and inconsistent training stimuli. My goal was to eliminate this issue by designing a board with offset, ergonomically spaced holds while maximizing the variety of grip types and depths within a compact footprint.
-                    </p>
-                    <p class="section-description">
-                        The board was engineered from red oak and mounted to a 1-1/4″ x 5/8″ x 14-gauge cold rolled C-channel steel frame. It features dovetail joints for structural integrity and ease of assembly. I performed Finite Element Analysis (FEA) to validate strength and reliability, targeting a minimum Factor of Safety (FoS) of 5 under a 63.5 kg distributed load. The final design achieved a FoS of 5.4 and combines functional hold variety, aesthetic form, and structural confidence.
-                    </p>
-                </div>
-            </div>
-
-            <div class="divider"></div>
-
-            <div class="project-section">
-                <h2 class="project-section-title">Design & Engineering</h2>
-
-                <div class="content-section">
-                    <h3 class="section-subtitle">Structural Design Philosophy</h3>
-                    <div class="content-full">
-                        <p class="section-description">
-                            My design prioritized compactness to eliminate wasted space while incorporating 18 unique hold configurations. I carefully optimized each hole’s depth and spacing to support varied grip positions, with each hold shape intentionally designed to target specific muscle groups.
-                        </p>
-                        
-                        <div class="dovetail-highlight">
-                            <p class="section-description">
-                                Early prototypes showed that screw-mounted joints were the primary failure point, prompting a redesign using integrated dovetail joints. These were validated through FEA to ensure a minimum Factor of Safety of 5 under dynamic loading conditions.
-                            </p>
-                        </div>
-                        
-                        <div class="two-image-container">
-                            <div class="image-wrapper">
-                                <img src="images/hangBoard/dovetail.jpg" alt="Design Sketch">
-                            </div>
-                            <div class="image-wrapper">
-                                <img src="images/hangBoard/dovetail2.jpg" alt="Hold Configuration">
-                            </div>
-                        </div>
-                        <div class="image-caption">Initial design sketches and hold configuration studies</div>
-                    </div>
-                </div>
-
-                <div class="content-section">
-                    <h3 class="section-subtitle">Material Selection & Joint Engineering</h3>
-                    <div class="content-full">
-                        <p class="section-description">
-                            Red oak was selected for its optimal balance of density (44 lbs/ft³) and compressive strength (7,000 psi). Through iterative design, I developed dovetail joints that aligned with the wood grain to maximize load-bearing capacity. Finite Element Analysis guided the joint geometry to meet the target Factor of Safety.
-                        </p>
-
-                        <div class="two-image-container">
-                            <div class="image-wrapper">
-                                <img src="images/hangBoard/fea1.jpg" alt="Design Sketch">
-                            </div>
-                            <div class="image-wrapper">
-                                <img src="images/hangBoard/fea2.jpg" alt="Hold Configuration">
-                            </div>
-                        </div>
-
-                        <div class="image-caption">FEA Results: Maximum von Mises stress of 1,280 psi at 140 lb load with minimum FoS of 5.4 at critical joints</div>
-                    </div>
-                </div>
-
-                <div class="content-section">
-                    <h3 class="section-subtitle">Precision Fabrication Process</h3>
-                    <div class="content-full">
-                        <p class="section-description">
-                            The fabrication process combined traditional woodworking with modern techniques:
-                        </p>
-                        
-                        <p class="section-description">
-                            1. <b>Material Preparation:</b> Rough maple stock processed through jointer/planer to achieve dimensional accuracy, then cut to precise lengths on tablesaw with ±0.5mm tolerance.<br>
-                            2. <b>Hold Manufacturing:</b> Laser-cut router jigs ensured consistent hole depths and profiles across all 18 unique hold configurations.<br>
-                            3. <b>Joint Engineering:</b> Table router used for precision dovetail joints, with 3mm radius fillets routed on all edges for smoothness and stress reduction.<br>
-                            4. <b>Finishing:</b> Sanding progression from 120 to 400 grit.
-                        </p>
-                        <div class="two-image-container">
-                            <div class="image-wrapper">
-                                <img src="images/hangBoard/hang.jpg" alt="Beater Bar Design">
-                            </div>
-
-                            <div class="image-wrapper">
-                                <video controls muted playsinline>
-                                    <source src="images/hangBoard/hang.webm" type="video/webm">
-                                    Your browser does not support the video tag.
-                                </video>
-                            </div>
-                        </div>
-                    <div class="image-caption">A video of me failing before the hangboard fails</div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="project-section">
-                <h2 class="project-section-title">Key Takeaways & Skills Utilized</h2>
-                <p class="section-description">
-                    This project showed that aligning joints with the wood grain significantly improved strength, with grain-aligned configurations handling up to 40% more load than cross-grain designs. FEA confirmed that the dovetail mounting system offered far greater reliability than traditional screw fasteners under expected loads.
-                </p>
-
-                
-                <h3 class="section-subtitle">Technical Skills Developed</h3>
-                <ul class="skills-list">
-                    <li>SolidWorks FEA Simulation</li>
-                    <li>Precision Joinery Fabrication</li>
-                    <li>Woodshop Machinery Operation</li>
-                    <li>Ergonomic Design Principles</li>
-                    <li>Material Selection & Analysis</li>
-                </ul>
-            </div>
-
-            <div class="divider"></div>
-
-            <div class="project-section">
-                <h2 class="project-section-title">Technical Specifications</h2>
-                <div class="contact-section">
-                    <div class="spec-grid">
-                        <div class="spec-card">
-                            <h4>Material</h4>
-                            <div class="spec-value">Red Oak</div>
-                        </div>
-                        <div class="spec-card">
-                            <h4>Dimensions</h4>
-                            <div class="spec-value">24" × 6"</div>
-                            <p>Thickness: 1.5"</p>
-                        </div>
-                        <div class="spec-card">
-                            <h4>Holds</h4>
-                            <div class="spec-value">18 Configurations</div>
-                            <p>Unique grip types</p>
-                        </div>
-                        <div class="spec-card">
-                            <h4>Weight Capacity</h4>
-                            <div class="spec-value">300+ lbs</div>
-                            <p>136kg</p>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
+    <div class="image-description-container">
+      <div class="image-container">
+        <img
+          src="images/hangBoard/hang.webp"
+          alt="hangboard.jpg"
+          class="image-left"
+          onerror="this.onerror=null; this.src='images/hangBoard/hangboard.jpg';"
+        />
+        <div class="image-caption">
+          Hangboard mounted on C-channel frame CAD
         </div>
+      </div>
 
-		<div id="bg2"></div>
+      <div class="description-container">
+        <h3 class="description-title">Engineered Climbing Training Tool</h3>
+        <p class="description-text">
+          Designed and fabricated a structural hangboard with a minimum Factor of Safety of 5, featuring precision dovetail joints, ergonomic holds, and optimized for mounting on a 1-1/4″ x 5/8″ cold rolled C-channel frame.
+        </p>
+      </div>
+    </div>
 
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                // Hamburger toggle
-                const hamburger = document.getElementById('hamburger');
-                const dropdown = document.getElementById('navDropdown');
-                hamburger.addEventListener('click', function() {
-                    const isExpanded = this.getAttribute('aria-expanded') === 'true';
-                    this.setAttribute('aria-expanded', String(!isExpanded));
-                    dropdown.classList.toggle('show');
-                });
-                
-                // Media resizing for both images and videos
-                const containers = document.querySelectorAll('.two-image-container');
-                
-                containers.forEach(container => {
-                    // Get media elements (both images and videos)
-                    const mediaElements = [
-                        container.querySelector('.image-wrapper:first-child > img, .image-wrapper:first-child > video'),
-                        container.querySelector('.image-wrapper:last-child > img, .image-wrapper:last-child > video')
-                    ];
-                    
-                    if (!mediaElements[0] || !mediaElements[1]) return;
-                    
-                    const media1 = mediaElements[0];
-                    const media2 = mediaElements[1];
-                    const GAP = 15;
-                    let MAX_CONTAINER_WIDTH = (window.innerWidth < 768 ? 1 : 0.8) * container.parentElement.offsetWidth;
-                    
-                    function getDimensions(media) {
-                        return new Promise(resolve => {
-                            // Handle images
-                            if (media.tagName === 'IMG') {
-                                if (media.complete) {
-                                    resolve({ width: media.naturalWidth, height: media.naturalHeight });
-                                } else {
-                                    media.onload = () => resolve({ width: media.naturalWidth, height: media.naturalHeight });
-                                }
-                            }
-                            // Handle videos
-                            else if (media.tagName === 'VIDEO') {
-                                if (media.readyState >= 2) { // HAVE_CURRENT_DATA
-                                    resolve({ width: media.videoWidth, height: media.videoHeight });
-                                } else {
-                                    media.onloadedmetadata = () => resolve({ width: media.videoWidth, height: media.videoHeight });
-                                }
-                            }
-                        });
-                    }
-                    
-                    async function resizeMedia() {
-                        const dim1 = await getDimensions(media1);
-                        const dim2 = await getDimensions(media2);
-                        
-                        const aspectRatio1 = dim1.width / dim1.height;
-                        const aspectRatio2 = dim2.width / dim2.height;
-                        const maxHeight = (MAX_CONTAINER_WIDTH - GAP) / (aspectRatio1 + aspectRatio2);
-                        
-                        const commonHeight = Math.min(
-                            maxHeight,
-                            dim1.height,
-                            dim2.height
-                        );
-                        
-                        media1.style.height = `${commonHeight}px`;
-                        media2.style.height = `${commonHeight}px`;
-                    }
-                    
-                    // Initialize
-                    resizeMedia();
-                    
-                    // Handle window resize
-                    window.addEventListener('resize', () => {
-                        MAX_CONTAINER_WIDTH = (window.innerWidth < 768 ? 1 : 0.8) * container.parentElement.offsetWidth;
-                        resizeMedia();
-                    });
-                });
-            });
-        </script>
+    <div class="project-section">
+      <h2 class="project-section-title">Project Summary</h2>
+      <div class="content-full">
+        <p class="section-description">
+          This project involved the design and fabrication of a custom climbing hangboard intended for use at my workplace, Texas Inventionworks. Hangboards are essential for training finger strength in climbing, but many commercial models have ergonomic limitations—specifically, symmetric hold layouts that result in uneven hand spacing and inconsistent training stimuli. My goal was to eliminate this issue by designing a board with offset, ergonomically spaced holds while maximizing the variety of grip types and depths within a compact footprint.
+        </p>
+        <p class="section-description">
+          The board was engineered from red oak and mounted to a 1-1/4″ x 5/8″ x 14-gauge cold rolled C-channel steel frame. It features dovetail joints for structural integrity and ease of assembly. I performed Finite Element Analysis (FEA) to validate strength and reliability, targeting a minimum Factor of Safety (FoS) of 5 under a 63.5 kg distributed load. The final design achieved a FoS of 5.4 and combines functional hold variety, aesthetic form, and structural confidence.
+        </p>
+      </div>
+    </div>
 
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
-	</body>
+    <div class="divider"></div>
+
+    <div class="project-section">
+      <h2 class="project-section-title">Design & Engineering</h2>
+
+      <div class="content-section">
+        <h3 class="section-subtitle">Structural Design Philosophy</h3>
+        <div class="content-full">
+          <p class="section-description">
+            My design prioritized compactness to eliminate wasted space while incorporating 18 unique hold configurations. I carefully optimized each hole’s depth and spacing to support varied grip positions, with each hold shape intentionally designed to target specific muscle groups.
+          </p>
+
+          <div class="dovetail-highlight">
+            <p class="section-description">
+              Early prototypes showed that screw-mounted joints were the primary failure point, prompting a redesign using integrated dovetail joints. These were validated through FEA to ensure a minimum Factor of Safety of 5 under dynamic loading conditions.
+            </p>
+          </div>
+
+          <div class="two-image-container">
+            <div class="image-wrapper">
+              <img
+                src="images/hangBoard/dovetail.webp"
+                alt="dovetail.jpg"
+                onerror="this.onerror=null; this.src='images/hangBoard/dovetail.jpg';"
+              />
+            </div>
+            <div class="image-wrapper">
+              <img
+                src="images/hangBoard/dovetail2.webp"
+                alt="dovetail2.jpg"
+                onerror="this.onerror=null; this.src='images/hangBoard/dovetail2.jpg';"
+              />
+            </div>
+          </div>
+          <div class="image-caption">Initial design sketches and hold configuration studies</div>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h3 class="section-subtitle">Material Selection & Joint Engineering</h3>
+        <div class="content-full">
+          <p class="section-description">
+            Red oak was selected for its optimal balance of density (44 lbs/ft³) and compressive strength (7,000 psi). Through iterative design, I developed dovetail joints that aligned with the wood grain to maximize load-bearing capacity. Finite Element Analysis guided the joint geometry to meet the target Factor of Safety.
+          </p>
+
+          <div class="two-image-container">
+            <div class="image-wrapper">
+              <img
+                src="images/hangBoard/fea1.webp"
+                alt="fea1.jpg"
+                onerror="this.onerror=null; this.src='images/hangBoard/fea1.jpg';"
+              />
+            </div>
+            <div class="image-wrapper">
+              <img
+                src="images/hangBoard/fea2.webp"
+                alt="fea2.jpg"
+                onerror="this.onerror=null; this.src='images/hangBoard/fea2.jpg';"
+              />
+            </div>
+          </div>
+
+          <div class="image-caption">FEA Results: Maximum von Mises stress of 1,280 psi at 140 lb load with minimum FoS of 5.4 at critical joints</div>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h3 class="section-subtitle">Precision Fabrication Process</h3>
+        <div class="content-full">
+          <p class="section-description">
+            The fabrication process combined traditional woodworking with modern techniques:
+          </p>
+
+          <p class="section-description">
+            1. <b>Material Preparation:</b> Rough maple stock processed through jointer/planer to achieve dimensional accuracy, then cut to precise lengths on tablesaw with ±0.5mm tolerance.<br>
+            2. <b>Hold Manufacturing:</b> Laser-cut router jigs ensured consistent hole depths and profiles across all 18 unique hold configurations.<br>
+            3. <b>Joint Engineering:</b> Table router used for precision dovetail joints, with 3mm radius fillets routed on all edges for smoothness and stress reduction.<br>
+            4. <b>Finishing:</b> Sanding progression from 120 to 400 grit.
+          </p>
+          <div class="two-image-container">
+            <div class="image-wrapper">
+              <img
+                src="images/hangBoard/channel.webp"
+                alt="channel.jpg"
+                onerror="this.onerror=null; this.src='images/hangBoard/channel.jpg';"
+              />
+            </div>
+
+            <div class="image-wrapper">
+              <video controls muted playsinline>
+                <source src="images/hangBoard/hang.webm" type="video/webm">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+          <div class="image-caption">A video of me failing before the hangboard fails</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-section">
+      <h2 class="project-section-title">Key Takeaways & Skills Utilized</h2>
+      <p class="section-description">
+        This project showed that aligning joints with the wood grain significantly improved strength, with grain-aligned configurations handling up to 40% more load than cross-grain designs. FEA confirmed that the dovetail mounting system offered far greater reliability than traditional screw fasteners under expected loads.
+      </p>
+
+      <h3 class="section-subtitle">Technical Skills Developed</h3>
+      <ul class="skills-list">
+        <li>SolidWorks FEA Simulation</li>
+        <li>Precision Joinery Fabrication</li>
+        <li>Woodshop Machinery Operation</li>
+        <li>Ergonomic Design Principles</li>
+        <li>Material Selection & Analysis</li>
+      </ul>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="project-section">
+      <h2 class="project-section-title">Technical Specifications</h2>
+      <div class="contact-section">
+        <div class="spec-grid">
+          <div class="spec-card">
+            <h4>Material</h4>
+            <div class="spec-value">Red Oak</div>
+          </div>
+          <div class="spec-card">
+            <h4>Dimensions</h4>
+            <div class="spec-value">24" × 6"</div>
+            <p>Thickness: 1.5"</p>
+          </div>
+          <div class="spec-card">
+            <h4>Holds</h4>
+            <div class="spec-value">18 Configurations</div>
+            <p>Unique grip types</p>
+          </div>
+          <div class="spec-card">
+            <h4>Weight Capacity</h4>
+            <div class="spec-value">300+ lbs</div>
+            <p>136kg</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="bg2"></div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const hamburger = document.getElementById('hamburger');
+      const dropdown = document.getElementById('navDropdown');
+      hamburger.addEventListener('click', function() {
+        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', String(!isExpanded));
+        dropdown.classList.toggle('show');
+      });
+
+      const containers = document.querySelectorAll('.two-image-container');
+      containers.forEach(container => {
+        const mediaElements = [
+          container.querySelector('.image-wrapper:first-child > img, .image-wrapper:first-child > video'),
+          container.querySelector('.image-wrapper:last-child > img, .image-wrapper:last-child > video')
+        ];
+        if (!mediaElements[0] || !mediaElements[1]) return;
+        const media1 = mediaElements[0];
+        const media2 = mediaElements[1];
+        const GAP = 15;
+        let MAX_CONTAINER_WIDTH = (window.innerWidth < 768 ? 1 : 0.8) * container.parentElement.offsetWidth;
+
+        function getDimensions(media) {
+          return new Promise(resolve => {
+            if (media.tagName === 'IMG') {
+              if (media.complete) {
+                resolve({ width: media.naturalWidth, height: media.naturalHeight });
+              } else {
+                media.onload = () => resolve({ width: media.naturalWidth, height: media.naturalHeight });
+              }
+            } else if (media.tagName === 'VIDEO') {
+              if (media.readyState >= 2) {
+                resolve({ width: media.videoWidth, height: media.videoHeight });
+              } else {
+                media.onloadedmetadata = () => resolve({ width: media.videoWidth, height: media.videoHeight });
+              }
+            }
+          });
+        }
+
+        async function resizeMedia() {
+          const dim1 = await getDimensions(media1);
+          const dim2 = await getDimensions(media2);
+          const aspectRatio1 = dim1.width / dim1.height;
+          const aspectRatio2 = dim2.width / dim2.height;
+          const maxHeight = (MAX_CONTAINER_WIDTH - GAP) / (aspectRatio1 + aspectRatio2);
+          const commonHeight = Math.min(maxHeight, dim1.height, dim2.height);
+          media1.style.height = `${commonHeight}px`;
+          media2.style.height = `${commonHeight}px`;
+        }
+
+        resizeMedia();
+        window.addEventListener('resize', () => {
+          MAX_CONTAINER_WIDTH = (window.innerWidth < 768 ? 1 : 0.8) * container.parentElement.offsetWidth;
+          resizeMedia();
+        });
+      });
+    });
+  </script>
+
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
 </html>
