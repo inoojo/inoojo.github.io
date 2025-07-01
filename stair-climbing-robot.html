@@ -41,7 +41,7 @@
     }
     /* Responsive adjustments */
     @media (max-width: 768px) {
-      .image-container, 
+      .image-container,
       .description-container {
         flex: 0 0 100%;
         max-width: 100%;
@@ -94,11 +94,11 @@
       margin-top: 1rem;
     }
     .project-image {
-      max-width: 80%; /* Limits width to 80% of container */
-      width: auto;    /* Allows natural width */
-      height: auto;   /* Maintains aspect ratio */
+      max-width: 80%;
+      width: auto;
+      height: auto;
       display: block;
-      margin: 0 auto; /* Centers horizontally */
+      margin: 0 auto;
       border-radius: 8px;
       box-shadow: 0 5px 25px rgba(0,0,0,0.3);
       border: 1px solid #444;
@@ -185,6 +185,8 @@
       height: 100%;
       object-fit: cover;
     }
+
+
   </style>
   <noscript><link rel="stylesheet" href="assets/css/noscript.css"></noscript>
 </head>
@@ -386,106 +388,151 @@
         </div>
       </div>
 
-    <div class="project-section">
-      <h2 class="project-section-title">Key Takeaways & Skills Utilized</h2>
-      <p class="section-description">
-        This project demonstrated that compliant joints require simultaneous mitigation against shear, peel, and tension failure modes. We learned that motor selection must precede joint design for proper load matching, and that SLA processes require statistical tolerance analysis for microscale components.
-      </p>
-      <div class="highlight-box">
+      <div class="project-section">
+        <h2 class="project-section-title">Key Takeaways & Skills Utilized</h2>
         <p class="section-description">
-          <b>Lesson Learned:</b> The project highlighted the critical importance of early joint strength validation and motor-weight tradeoffs. The 551-part assembly revealed challenges in Design for Manufacturing and Assembly (DFMA), where reducing part count would significantly improve future iterations.
+          This project demonstrated that compliant joints require simultaneous mitigation against shear, peel, and tension failure modes. We learned that motor selection must precede joint design for proper load matching, and that SLA processes require statistical tolerance analysis for microscale components.
         </p>
+        <div class="highlight-box">
+          <p class="section-description">
+            <b>Lesson Learned:</b> The project highlighted the critical importance of early joint strength validation and motor-weight tradeoffs. The 551-part assembly revealed challenges in Design for Manufacturing and Assembly (DFMA), where reducing part count would significantly improve future iterations.
+          </p>
+        </div>
+        <h3 class="section-subtitle">Key Skills Developed</h3>
+        <ul class="skills-list">
+          <li>Kinematic Analysis</li>
+          <li>Compliant Joint Design</li>
+          <li>Multi-material 3D Printing</li>
+          <li>SolidWorks Simulation</li>
+          <li>Micro-Tolerance GD&T</li>
+          <li>Finite Element Analysis</li>
+          <li>Prototype Iteration</li>
+          <li>Design for Manufacturing</li>
+        </ul>
       </div>
-      <h3 class="section-subtitle">Key Skills Developed</h3>
-      <ul class="skills-list">
-        <li>Kinematic Analysis</li>
-        <li>Compliant Joint Design</li>
-        <li>Multi-material 3D Printing</li>
-        <li>SolidWorks Simulation</li>
-        <li>Micro-Tolerance GD&T</li>
-        <li>Finite Element Analysis</li>
-        <li>Prototype Iteration</li>
-        <li>Design for Manufacturing</li>
-      </ul>
-    </div>
 
-    <div class="divider"></div>
+      <div class="divider"></div>
 
-    <div class="project-section">
-      <h2 class="project-section-title">Additional Information</h2>
-      <div class="contact-section">
-        <h3>Project Details & Resources</h3>
-        <p class="section-description">
-          More information about the project can be found in the wiki below. For detailed technical specifications, CAD files, or project documentation, please contact 
-          <a href="https://www.linkedin.com/in/inoo-jo-927570325/" target="_blank" style="color: #4b6cc1; text-decoration: none; font-weight: 600;">
-            Inoo Jo
+      <div class="project-section">
+        <h2 class="project-section-title">Additional Information</h2>
+        <div class="contact-section">
+          <h3>Project Details & Resources</h3>
+          <p class="section-description">
+            More information about the project can be found in the wiki below. For detailed technical specifications, CAD files, or project documentation, please contact 
+            <a href="https://www.linkedin.com/in/inoo-jo-927570325/" target="_blank" style="color: #4b6cc1; text-decoration: none; font-weight: 600;">
+              Inoo Jo
+            </a>
+          </p>
+          <a href="https://cloud.wikis.utexas.edu/wiki/spaces/RMD/pages/335742706/20+-+Stair+Climbing+Robot" 
+            target="_blank"
+            style="display: inline-block; 
+                  margin-top: 0; 
+                  margin-bottom: 1rem; 
+                  padding: 10px 20px; 
+                  background: rgba(75, 108, 193, 0.2); 
+                  color: #f0f0f0; 
+                  text-decoration: none; 
+                  border-radius: 5px; 
+                  border: 1px solid #4b6cc1;
+                  transition: background 0.3s ease;
+                  font-weight: 600;">
+            Robot Mechanism Design Wiki
           </a>
-        </p>
-        <a href="https://cloud.wikis.utexas.edu/wiki/spaces/RMD/pages/335742706/20+-+Stair+Climbing+Robot" 
-          target="_blank"
-          style="display: inline-block; 
-                margin-top: 0; 
-                margin-bottom: 1rem; 
-                padding: 10px 20px; 
-                background: rgba(75, 108, 193, 0.2); 
-                color: #f0f0f0; 
-                text-decoration: none; 
-                border-radius: 5px; 
-                border: 1px solid #4b6cc1;
-                transition: background 0.3s ease;
-                font-weight: 600;">
-          Robot Mechanism Design Wiki
-        </a>
+        </div>
+      </div>
     </div>
-  </div>
 
-  <div id="bg2"></div>
+    <div id="bg2"></div>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const containers = document.querySelectorAll('.two-media-container');
-      containers.forEach(container => {
-        const media = container.querySelectorAll('img, video');
-        if (media.length < 2) return;
+    <!-- Lightbox overlay -->
+    <div id="lightbox" class="lightbox-overlay" hidden>
+      <button id="lightbox-close" class="lightbox-close" aria-label="Close">&times;</button>
+      <img id="lightbox-img" src="" alt="Expanded view" />
+    </div>
 
-        let loaded = 0;
 
-        media.forEach(el => {
-          function setAR() {
-            let w, h;
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // ==== Two-media containers & hamburger (existing) ====
+        const containers = document.querySelectorAll('.two-media-container');
+        containers.forEach(container => {
+          const media = container.querySelectorAll('img, video');
+          if (media.length < 2) return;
+
+          let loaded = 0;
+
+          media.forEach(el => {
+            function setAR() {
+              let w, h;
+              if (el.tagName === 'IMG') {
+                w = el.naturalWidth;
+                h = el.naturalHeight;
+              } else if (el.tagName === 'VIDEO') {
+                w = el.videoWidth;
+                h = el.videoHeight;
+              }
+              if (w && h) {
+                el.parentElement.style.setProperty('--ar', w / h);
+              }
+              loaded++;
+              if (loaded === media.length) container.hidden = false;
+            }
+
             if (el.tagName === 'IMG') {
-              w = el.naturalWidth;
-              h = el.naturalHeight;
+              if (el.complete) setAR();
+              else el.addEventListener('load', setAR);
             } else if (el.tagName === 'VIDEO') {
-              w = el.videoWidth;
-              h = el.videoHeight;
+              if (el.readyState >= 1) setAR();
+              else el.addEventListener('loadedmetadata', setAR);
             }
-            if (w && h) {
-              el.parentElement.style.setProperty('--ar', w / h);
-            }
-            loaded++;
-            if (loaded === media.length) container.hidden = false;
-          }
+          });
+        });
 
-          if (el.tagName === 'IMG') {
-            if (el.complete) setAR();
-            else el.addEventListener('load', setAR);
-          } else if (el.tagName === 'VIDEO') {
-            if (el.readyState >= 1) setAR();
-            else el.addEventListener('loadedmetadata', setAR);
+        const hamburger = document.getElementById('hamburger');
+        const navDropdown = document.getElementById('navDropdown');
+        hamburger.addEventListener('click', () => {
+          const expanded = hamburger.getAttribute('aria-expanded') === 'true' || false;
+          hamburger.setAttribute('aria-expanded', !expanded);
+          navDropdown.style.display = navDropdown.style.display === 'block' ? 'none' : 'block';
+        });
+
+        // ==== Lightbox logic ====
+        const lightbox    = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const closeBtn    = document.getElementById('lightbox-close');
+
+
+        // Delegate clicks on all images except the ones inside the lightbox
+        document.body.addEventListener('click', e => {
+          const tgt = e.target;
+          if (tgt.tagName === 'IMG' && !tgt.closest('#lightbox')) {
+            lightboxImg.src = tgt.src;
+            lightbox.hidden = false;
           }
         });
-      });
 
-      // Hamburger menu toggle (keep your existing nav functionality)
-      const hamburger = document.getElementById('hamburger');
-      const navDropdown = document.getElementById('navDropdown');
-      hamburger.addEventListener('click', () => {
-        const expanded = hamburger.getAttribute('aria-expanded') === 'true' || false;
-        hamburger.setAttribute('aria-expanded', !expanded);
-        navDropdown.style.display = navDropdown.style.display === 'block' ? 'none' : 'block';
+        // Close lightbox when clicking the backdrop only
+        lightbox.addEventListener('click', e => {
+          if (e.target === lightbox) {
+            lightbox.hidden = true;
+            lightboxImg.src = '';
+          }
+        });
+
+        closeBtn.addEventListener('click', () => {
+          lightbox.hidden = true;
+          lightboxImg.src = '';
+        });
+
+        // Optional: close via Escape key
+        document.addEventListener('keydown', e => {
+          if (e.key === 'Escape' && !lightbox.hidden) {
+            lightbox.hidden = true;
+            lightboxImg.src = '';
+          }
+          
+        });
       });
-    });
-  </script>
+    </script>
 </body>
 </html>

@@ -426,6 +426,12 @@
 
   <div id="bg2"></div>
 
+  <!-- Lightbox overlay -->
+  <div id="lightbox" class="lightbox-overlay" hidden>
+    <button id="lightbox-close" class="lightbox-close" aria-label="Close">&times;</button>
+    <img id="lightbox-img" src="" alt="Expanded view" />
+  </div>
+
   <!-- New JS to unhide & set aspect ratios -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -462,6 +468,42 @@
         const expanded = this.getAttribute('aria-expanded') === 'true';
         this.setAttribute('aria-expanded', String(!expanded));
         dropdown.classList.toggle('show');
+      });
+      // ==== Lightbox logic ====
+      const lightbox    = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      const closeBtn    = document.getElementById('lightbox-close');
+
+
+      // Delegate clicks on all images except the ones inside the lightbox
+      document.body.addEventListener('click', e => {
+        const tgt = e.target;
+        if (tgt.tagName === 'IMG' && !tgt.closest('#lightbox')) {
+          lightboxImg.src = tgt.src;
+          lightbox.hidden = false;
+        }
+      });
+
+      // Close lightbox when clicking the backdrop only
+      lightbox.addEventListener('click', e => {
+        if (e.target === lightbox) {
+          lightbox.hidden = true;
+          lightboxImg.src = '';
+        }
+      });
+
+      closeBtn.addEventListener('click', () => {
+        lightbox.hidden = true;
+        lightboxImg.src = '';
+      });
+
+      // Optional: close via Escape key
+      document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && !lightbox.hidden) {
+          lightbox.hidden = true;
+          lightboxImg.src = '';
+        }
+        
       });
     });
   </script>
