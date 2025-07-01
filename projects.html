@@ -21,7 +21,7 @@
         display: flex;
         border-radius: 5px;
         overflow: hidden;
-        transition: all 0.3s ease;
+        transition: all 0.3s ease !important;
         box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
         position: relative;
         min-height: 250px;
@@ -32,6 +32,7 @@
         opacity: 0;
         transform: translateY(20px);
         animation: fadeIn 0.8s ease forwards;
+        pointer-events: none;
       }
       
       @keyframes fadeIn {
@@ -42,9 +43,13 @@
       }
       
       .project-button:hover {
-        transform: translateY(-10px) scale(1.025);
+        transform: translateY(-10px) scale(1.025) !important;
         box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
         border-color: #4b6cc1;
+      }
+
+      .project-button.animation-complete {
+        pointer-events: auto;
       }
       
       .project-image-container {
@@ -170,7 +175,6 @@
             src="images/stairClimber/stairClimberMain.webp"
             alt="stairClimberMain.jpg"
             class="project-image"
-            onerror="this.onerror=null;this.src='images/stairClimber/stairClimberMain.gif';"
           >
         </div>
         <div class="project-info">
@@ -284,6 +288,25 @@
           });
         }, 100);
       });
+    </script>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // ... existing code ...
+
+      // Remove the problematic animationend listener
+      const buttons = document.querySelectorAll('.project-button');
+      buttons.forEach(btn => {
+        btn.addEventListener('animationend', () => {
+          // Remove the style properties we're setting
+          btn.style.opacity = '1';
+          btn.style.transform = 'translateY(0)';
+          
+          // Only remove the animation
+          btn.classList.add('animation-complete');
+          btn.style.animation = 'none';
+        });
+      });
+    });
     </script>
   </body>
 </html>

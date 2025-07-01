@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <style>
+
     /* Only added necessary styles for the image-description container */
     .image-description-container {
       display: flex;
@@ -45,6 +46,7 @@
         max-width: 100%;
       }
     }
+
     /* All your original CSS remains intact below */
     .project-banner { margin-top: -3rem; position: relative; }
     .project-section { margin-bottom: 0; padding-bottom: 0; }
@@ -107,24 +109,6 @@
       margin:30px 0;
     }
     .divider { height:1px; background:rgba(255,255,255,0.1); margin:35px 0; }
-    .two-image-container .image-wrapper img,
-    .two-image-container .image-wrapper video {
-      object-fit:contain; width:auto; height:auto;
-      max-height:100%; margin-top:1rem;
-    }
-    .video-container {
-      position:relative; width:100%;
-      margin:0 auto; border-radius:8px;
-      box-shadow:0 5px 25px rgba(0,0,0,0.3);
-      border:1px solid #444; overflow:hidden;
-    }
-    .video-container::before {
-      content:""; display:block; padding-top:56.25%;
-    }
-    .video-container video {
-      position:absolute; top:0; left:0; width:100%; height:100%;
-      object-fit:cover;
-    }
   </style>
   <noscript><link rel="stylesheet" href="assets/css/noscript.css"></noscript>
 </head>
@@ -203,15 +187,15 @@
             To improve maintainability and field repairability, we adopted a modular frame architecture using machined aluminum angle brackets at the corners. Unlike a mono-part frame, this approach allowed for quick part replacement in the event of damage—crucial in a high-impact environment.
           </p>
 
-          <div class="two-image-container">
-            <div class="image-wrapper">
+          <div class="two-media-container" hidden>
+            <div class="media-wrapper">
               <img
                 src="images/combatRobot/early.webp"
                 alt="early.jpg"
                 onerror="this.onerror=null;this.src='images/combatRobot/early.jpg';"
               >
             </div>
-            <div class="image-wrapper">
+            <div class="media-wrapper">
               <img
                 src="images/combatRobot/final.webp"
                 alt="final.jpg"
@@ -228,18 +212,18 @@
         <h3 class="section-subtitle">Weapon System Engineering</h3>
         <div class="content-full">
           <p class="section-description">
-            The aluminum beater bar was engineered for optimal mass distribution - heavy enough to transfer kinetic energy but light enough to achieve rapid spin-up times. Starting with manual mill and dropsaw roughing, we finished the component using CNC machining. Threaded mounts allowed quick replacement of hardened steel screw teeth between matches, maintaining offensive capability throughout the tournament. Dynamic balancing using the adjustable teeth allowed for minimal vibration at operational RPMs.
+            The aluminum beater bar was engineered for optimal mass distribution—heavy enough to transfer kinetic energy but light enough to achieve rapid spin-up times. Starting with manual mill and dropsaw roughing, we finished the component using CNC machining. Threaded mounts allowed quick replacement of hardened steel screw teeth between matches, maintaining offensive capability throughout the tournament. Dynamic balancing using the adjustable teeth allowed for minimal vibration at operational RPMs.
           </p>
 
-          <div class="two-image-container">
-            <div class="image-wrapper">
+          <div class="two-media-container" hidden>
+            <div class="media-wrapper">
               <img
                 src="images/combatRobot/closeup.webp"
                 alt="closeup.jpg"
                 onerror="this.onerror=null;this.src='images/combatRobot/closeup.jpg';"
               >
             </div>
-            <div class="image-wrapper">
+            <div class="media-wrapper">
               <video controls muted playsinline>
                 <source src="images/combatRobot/test.webm" type="video/webm">
                 <source src="images/combatRobot/test.mp4" type="video/mp4">
@@ -258,15 +242,16 @@
           <p class="section-description">
             Laser-cut prototypes were used to test various side panel configurations, with finite element analysis informing our final frame geometry to withstand cantilevered loading. The UHMW chassis was CNC-milled on a Tormach 1100, and assembled using custom-machined aluminum corner brackets to ensure structural rigidity while allowing for quick disassembly and repair. Stainless steel side and rear panels were added to reinforce the frame and provide additional protection to critical components, significantly increasing the robot’s durability during direct impacts.
           </p>
-          <div class="two-image-container">
-            <div class="image-wrapper">
+
+          <div class="two-media-container" hidden>
+            <div class="media-wrapper">
               <img
                 src="images/combatRobot/mill.webp"
                 alt="mill.jpg"
                 onerror="this.onerror=null;this.src='images/combatRobot/mill.jpg';"
               >
             </div>
-            <div class="image-wrapper">
+            <div class="media-wrapper">
               <img
                 src="images/combatRobot/mounts.webp"
                 alt="mounts.jpg"
@@ -274,15 +259,16 @@
               >
             </div>
           </div>
-          <div class="two-image-container">
-            <div class="image-wrapper">
+
+          <div class="two-media-container" hidden>
+            <div class="media-wrapper">
               <img
                 src="images/combatRobot/wheel.webp"
                 alt="wheel.jpg"
                 onerror="this.onerror=null;this.src='images/combatRobot/wheel.jpg';"
               >
             </div>
-            <div class="image-wrapper">
+            <div class="media-wrapper">
               <img
                 src="images/combatRobot/assemble.webp"
                 alt="assemble.jpg"
@@ -306,12 +292,14 @@
               <b>Competition Result:</b> Placed 2nd out of 16 teams at Texas Robo Rumble, with the robot surviving many direct hits from steel weapons that eliminated other competitors.
             </p>
           </div>
-          <div class="video-container">
-            <video controls>
-              <source src="images/combatRobot/fight.webm" type="video/webm">
-              <source src="images/combatRobot/fight.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
+          <div class="two-media-container" hidden>
+            <div class="media-wrapper">
+              <video controls>
+                <source src="images/combatRobot/fight.webm" type="video/webm">
+                <source src="images/combatRobot/fight.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
           </div>
           <div class="image-caption">Competition highlights</div>
         </div>
@@ -326,7 +314,7 @@
       </p>
       <div class="highlight-box">
         <p class="section-description">
-          <b>Engineering Insight:</b> The UHMW frame's performance redefined our approach to impact resistance - energy absorption through material deformation proved more effective than rigid protection against impact weapons.
+          <b>Engineering Insight:</b> The UHMW frame's performance redefined our approach to impact resistance—energy absorption through material deformation proved more effective than rigid protection against impact weapons.
         </p>
       </div>
       <h3 class="section-subtitle">Technical Skills Developed</h3>
@@ -378,40 +366,28 @@
         dropdown.classList.toggle('show');
       });
 
-      // Media resizing for both images and videos
-      const containers = document.querySelectorAll('.two-image-container');
-      containers.forEach(container => {
-        const media1 = container.querySelector('.image-wrapper:first-child img, .image-wrapper:first-child video');
-        const media2 = container.querySelector('.image-wrapper:last-child img, .image-wrapper:last-child video');
-        if (!media1 || !media2) return;
-        const GAP = 15;
-        let MAX_W = (window.innerWidth < 768 ? 1 : 0.8) * container.parentElement.offsetWidth;
-
-        function getDim(m) {
-          return m.tagName === 'IMG'
-            ? { w: m.naturalWidth, h: m.naturalHeight }
-            : { w: m.videoWidth, h: m.videoHeight };
-        }
-        function resize() {
-          const d1 = getDim(media1), d2 = getDim(media2);
-          const ar1 = d1.w/d1.h, ar2 = d2.w/d2.h;
-          const maxH = (MAX_W - GAP)/(ar1+ar2);
-          const commonH = Math.min(maxH, d1.h, d2.h);
-          media1.style.height = commonH + 'px';
-          media2.style.height = commonH + 'px';
-        }
-        function init() {
-          if (media1.complete !== false && media2.complete !== false) resize();
-          else {
-            media1.addEventListener('load', resize);
-            media2.addEventListener('loadedmetadata', resize);
+      // Mixed-media aspect-ratio flexbox setup
+      document.querySelectorAll('.two-media-container').forEach(container => {
+        const items = container.querySelectorAll('img, video');
+        let loaded = 0;
+        items.forEach(el => {
+          function applyAR() {
+            let w, h;
+            if (el.tagName === 'IMG') {
+              w = el.naturalWidth; h = el.naturalHeight;
+            } else {
+              w = el.videoWidth; h = el.videoHeight;
+            }
+            if (w && h) el.parentElement.style.setProperty('--ar', w / h);
+            loaded++;
+            if (loaded === items.length) container.hidden = false;
           }
-        }
-        window.addEventListener('resize', () => {
-          MAX_W = (window.innerWidth < 768 ? 1 : 0.8) * container.parentElement.offsetWidth;
-          resize();
+          if (el.tagName === 'IMG') {
+            el.complete ? applyAR() : el.addEventListener('load', applyAR);
+          } else {
+            el.readyState >= 1 ? applyAR() : el.addEventListener('loadedmetadata', applyAR);
+          }
         });
-        init();
       });
     });
   </script>

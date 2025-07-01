@@ -680,7 +680,14 @@ html, body {
 .image-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
+    gap: clamp(
+      5px, 
+      calc(
+        5px + 
+        ( (100vw - 400px) * (10 / 368) )
+      ), 
+      15px
+    );    
     max-width: 80%;
     margin: 0 auto;
 }
@@ -723,29 +730,42 @@ html, body {
 }
 
 /* Container for the two images */
-.two-image-container {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin: 0 auto;
-    max-width: 100%;
+.two-media-container {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto clamp(
+    5px,
+    calc(5px + ((100vw - 400px) * (10 / 368))),
+    15px
+  ) auto;  
+  max-width: 80%;
+  gap: clamp(
+    5px, 
+    calc(
+      5px + 
+      ( (100vw - 400px) * (10 / 368) )
+    ), 
+    15px
+  );
 }
 
-
-.image-wrapper img {
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    border: 1px solid #444;
+.media-wrapper {
+  flex: var(--ar) 0 0;
+  width: 0;
 }
-
-.image-wrapper video {
-    width: 100%;
-    height: auto;
-    max-height: 400px;
-    object-fit: contain;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    border: 1px solid #444;
+.media-wrapper img,
+.media-wrapper video {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  border: 1px solid #444;
+}
+@media (max-width: 768px) {
+  .two-media-container { max-width: 100%; 
+  }
 }
 
 .image-caption {

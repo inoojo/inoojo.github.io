@@ -7,6 +7,9 @@
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <style>
+    /* === New two‑media layout === */
+
+
     .spec-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -227,9 +230,7 @@
       <a href="projects.html" class="nav-button"><b>Projects</b></a>
       <a href="Inoo_Resume.pdf" target="_blank" class="nav-button"><b>Resume</b></a>
     </div>
-    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
-      &#9776;
-    </button>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
     <div class="nav-dropdown" id="navDropdown">
       <a href="index.html#wrapper"><b>Home</b></a>
       <a href="index.html#about"><b>About</b></a>
@@ -257,7 +258,6 @@
           Hangboard mounted on C-channel frame CAD
         </div>
       </div>
-
       <div class="description-container">
         <h3 class="description-title">Engineered Climbing Training Tool</h3>
         <p class="description-text">
@@ -296,15 +296,15 @@
             </p>
           </div>
 
-          <div class="two-image-container">
-            <div class="image-wrapper">
+          <div class="two-media-container" hidden>
+            <div class="media-wrapper">
               <img
                 src="images/hangBoard/dovetail.webp"
                 alt="dovetail.jpg"
                 onerror="this.onerror=null; this.src='images/hangBoard/dovetail.jpg';"
               />
             </div>
-            <div class="image-wrapper">
+            <div class="media-wrapper">
               <img
                 src="images/hangBoard/dovetail2.webp"
                 alt="dovetail2.jpg"
@@ -323,15 +323,15 @@
             Red oak was selected for its optimal balance of density (44 lbs/ft³) and compressive strength (7,000 psi). Through iterative design, I developed dovetail joints that aligned with the wood grain to maximize load-bearing capacity. Finite Element Analysis guided the joint geometry to meet the target Factor of Safety.
           </p>
 
-          <div class="two-image-container">
-            <div class="image-wrapper">
+          <div class="two-media-container" hidden>
+            <div class="media-wrapper">
               <img
                 src="images/hangBoard/fea1.webp"
                 alt="fea1.jpg"
                 onerror="this.onerror=null; this.src='images/hangBoard/fea1.jpg';"
               />
             </div>
-            <div class="image-wrapper">
+            <div class="media-wrapper">
               <img
                 src="images/hangBoard/fea2.webp"
                 alt="fea2.jpg"
@@ -339,7 +339,6 @@
               />
             </div>
           </div>
-
           <div class="image-caption">FEA Results: Maximum von Mises stress of 1,280 psi at 140 lb load with minimum FoS of 5.4 at critical joints</div>
         </div>
       </div>
@@ -358,15 +357,15 @@
             4. <b>Finishing:</b> Sanding progression from 120 to 400 grit.
           </p>
 
-          <div class="two-image-container">
-            <div class="image-wrapper">
+          <div class="two-media-container" hidden>
+            <div class="media-wrapper">
               <img
                 src="images/hangBoard/channel.webp"
                 alt="channel.jpg"
                 onerror="this.onerror=null; this.src='images/hangBoard/channel.jpg';"
               />
             </div>
-            <div class="image-wrapper">
+            <div class="media-wrapper">
               <video controls muted playsinline>
                 <source src="images/hangBoard/hang.webm" type="video/webm">
                 <source src="images/hangBoard/hang.mp4" type="video/mp4">
@@ -427,62 +426,42 @@
 
   <div id="bg2"></div>
 
+  <!-- New JS to unhide & set aspect ratios -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
+      const containers = document.querySelectorAll('.two-media-container');
+      containers.forEach(container => {
+        const media = container.querySelectorAll('img, video');
+        if (media.length < 2) return;
+        let loaded = 0;
+        media.forEach(el => {
+          function setAR() {
+            let w, h;
+            if (el.tagName === 'IMG') {
+              w = el.naturalWidth; h = el.naturalHeight;
+            } else {
+              w = el.videoWidth; h = el.videoHeight;
+            }
+            if (w && h) {
+              el.parentElement.style.setProperty('--ar', w/h);
+            }
+            if (++loaded === media.length) container.hidden = false;
+          }
+          if (el.tagName === 'IMG') {
+            el.complete ? setAR() : el.addEventListener('load', setAR);
+          } else {
+            el.readyState >= 1 ? setAR() : el.addEventListener('loadedmetadata', setAR);
+          }
+        });
+      });
+
+      // Hamburger menu toggle
       const hamburger = document.getElementById('hamburger');
       const dropdown = document.getElementById('navDropdown');
       hamburger.addEventListener('click', function() {
-        const isExpanded = this.getAttribute('aria-expanded') === 'true';
-        this.setAttribute('aria-expanded', String(!isExpanded));
+        const expanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', String(!expanded));
         dropdown.classList.toggle('show');
-      });
-
-      const containers = document.querySelectorAll('.two-image-container');
-      containers.forEach(container => {
-        const mediaElements = [
-          container.querySelector('.image-wrapper:first-child > img, .image-wrapper:first-child > video'),
-          container.querySelector('.image-wrapper:last-child > img, .image-wrapper:last-child > video')
-        ];
-        if (!mediaElements[0] || !mediaElements[1]) return;
-        const media1 = mediaElements[0];
-        const media2 = mediaElements[1];
-        const GAP = 15;
-        let MAX_CONTAINER_WIDTH = (window.innerWidth < 768 ? 1 : 0.8) * container.parentElement.offsetWidth;
-
-        function getDimensions(media) {
-          return new Promise(resolve => {
-            if (media.tagName === 'IMG') {
-              if (media.complete) {
-                resolve({ width: media.naturalWidth, height: media.naturalHeight });
-              } else {
-                media.onload = () => resolve({ width: media.naturalWidth, height: media.naturalHeight });
-              }
-            } else if (media.tagName === 'VIDEO') {
-              if (media.readyState >= 2) {
-                resolve({ width: media.videoWidth, height: media.videoHeight });
-              } else {
-                media.onloadedmetadata = () => resolve({ width: media.videoWidth, height: media.videoHeight });
-              }
-            }
-          });
-        }
-
-        async function resizeMedia() {
-          const dim1 = await getDimensions(media1);
-          const dim2 = await getDimensions(media2);
-          const aspectRatio1 = dim1.width / dim1.height;
-          const aspectRatio2 = dim2.width / dim2.height;
-          const maxHeight = (MAX_CONTAINER_WIDTH - GAP) / (aspectRatio1 + aspectRatio2);
-          const commonHeight = Math.min(maxHeight, dim1.height, dim2.height);
-          media1.style.height = `${commonHeight}px`;
-          media2.style.height = `${commonHeight}px`;
-        }
-
-        resizeMedia();
-        window.addEventListener('resize', () => {
-          MAX_CONTAINER_WIDTH = (window.innerWidth < 768 ? 1 : 0.8) * container.parentElement.offsetWidth;
-          resizeMedia();
-        });
       });
     });
   </script>

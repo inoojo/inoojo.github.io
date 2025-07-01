@@ -1,637 +1,538 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<title>RC Car - Portfolio</title>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-		<link rel="stylesheet" href="assets/css/main.css">
-        <link rel="stylesheet" href="assets/css/style.css">
-        <style>
-            /* RC Car specific styles */
-            .rc-gradient-bg {
-                background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),
-                            radial-gradient(circle at center, #1a2a6c, #b21f1f, #1a2a6c);
-                background-size: 400% 400%;
-                animation: gradientBG 15s ease infinite;
-            }
-            
-            @keyframes gradientBG {
-                0% { background-position: 0% 50%; }
-                50% { background-position: 100% 50%; }
-                100% { background-position: 0% 50%; }
-            }
-            
-            .spec-highlight {
-                background: rgba(30, 40, 90, 0.6);
-                border-left: 4px solid #ff5e00;
-                padding: 15px;
-                margin: 20px 0;
-                border-radius: 0 8px 8px 0;
-            }
-            
-            .car-stats {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-                gap: 15px;
-                margin: 25px 0;
-            }
-            
-            .stat-card {
-                background: rgba(25, 30, 60, 0.7);
-                border-radius: 8px;
-                padding: 15px;
-                text-align: center;
-                border: 1px solid #3a4a8a;
-                transition: transform 0.3s ease;
-            }
-            
-            .stat-card:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 5px 15px rgba(255, 94, 0, 0.2);
-            }
-            
-            .stat-value {
-                font-size: 1.8rem;
-                color: #ff5e00;
-                font-weight: 600;
-                margin: 10px 0;
-            }
-            
-            /* All your original CSS remains intact below */
-            .image-description-container {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 30px;
-                margin: 0;
-            }
-            
-            .image-container {
-                flex: 0 0 calc(50% - 15px);
-                max-width: calc(50% - 15px);
-            }
-            
-            .description-container {
-                flex: 0 0 calc(50% - 15px);
-                max-width: calc(50% - 15px);
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-            }
-            
-            .description-title {
-                font-size: 1.5rem;
-                color: #6f8dd0;
-                margin-bottom: 15px;
-                font-weight: 600;
-                text-shadow: 0 2.5px 5px rgba(0, 0, 0, 0.7);
-            }
-            
-            .description-text {
-                font-size: 1.1rem;
-                line-height: 1.7;
-                color: #e0e0e0;
-            }
-            
-            @media (max-width: 768px) {
-                .image-container, 
-                .description-container {
-                    flex: 0 0 100%;
-                    max-width: 100%;
-                }
-            }
-            
-            .project-banner {
-                margin-top: -3rem;
-                position: relative;
-            }
-            
-            .project-section {
-                margin-bottom: 0px;
-                padding-bottom: 0px;
-            }
-            
-            .project-section-title {
-                font-size: 1.5rem;
-                padding-bottom: 1rem;
-                color: #f0f0f0;
-                position: relative;
-                font-weight: 600;
-            }
-            
-            .project-section-title:after {
-                content: '';
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                width: 70px;
-                height: 4px;
-                background: #4b6cc1;
-                border-radius: 2px;
-            }
-            
-            .section-description {
-                font-size: 1rem;
-                line-height: 1.75;
-                color: #e0e0e0;
-            }
-            
-            .section-subtitle {
-                font-size: 1.2rem;
-                margin: 0;
-                color: #d0d0d0;
-                font-weight: 500;
-                padding-left: 15px;
-                border-left: 3px solid #4b6cc1;
-            }
-            
-            .section-description b {
-                color: #4b6cc1;
-                font-weight: 600;
-            }
-            
-            .content-full {
-                width: 100%;
-                margin-top: 1rem;
-            }
-            
-            .project-image {
-                max-width: 80%; /* Limits width to 80% of container */
-                width: auto; /* Allows natural width */
-                height: auto; /* Maintains aspect ratio */
-                display: block;
-                margin: 0 auto; /* Centers horizontally */
-                border-radius: 8px;
-                box-shadow: 0 5px 25px rgba(0,0,0,0.3);
-                border: 1px solid #444;
-            }
+<head>
+  <title>RC Car - Portfolio</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
 
-            @media (max-width: 768px) {
-                .project-image{
-                    max-width: 100%;
-                    margin: 0;
-                }
-                
-            }
-            
-            .key-takeaways {
-                padding: 30px 0;
-                margin: 40px 0;
-            }
-            
-            .skills-list {
-                margin: 30px 0 0 0;
-                padding: 0;
-                list-style-type: none;
-            }
-            
-            .skills-list li {
-                position: relative;
-                padding-left: 25px;
-                margin-bottom: 12px;
-                font-size: 1.1rem;
-                color: #e0e0e0;
-            }
-            
-            .skills-list li:before {
-                content: '•';
-                position: absolute;
-                left: 0;
-                color: #4b6cc1;
-                font-size: 1.4rem;
-                line-height: 1;
-            }
-            
-            .contact-section {
-                text-align: center;
-                margin: 0px;
-                padding: 0px;
-                background-color: #1a1f2d;
-                border-radius: 10px;
-                border: 1px solid #2a3449;
-                box-shadow: 0 5px 25px rgba(0,0,0,0.4);
-            }
-            
-            .contact-section h3 {
-                font-size: 1.5rem;
-                color: #f0f0f0;
-                margin: 1rem 0;
-            }
+    /* === Existing RC Car styles === */
+    .rc-gradient-bg {
+      background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),
+                  radial-gradient(circle at center, #1a2a6c, #b21f1f, #1a2a6c);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+    }
+    @keyframes gradientBG {
+      0%   { background-position: 0% 50%; }
+      50%  { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .spec-highlight {
+      background: rgba(30, 40, 90, 0.6);
+      border-left: 4px solid #ff5e00;
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .car-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin: 25px 0;
+    }
+    .stat-card {
+      background: rgba(25, 30, 60, 0.7);
+      border-radius: 8px;
+      padding: 15px;
+      text-align: center;
+      border: 1px solid #3a4a8a;
+      transition: transform 0.3s ease;
+    }
+    .stat-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(255, 94, 0, 0.2);
+    }
+    .stat-value {
+      font-size: 1.8rem;
+      color: #ff5e00;
+      font-weight: 600;
+      margin: 10px 0;
+    }
+    .image-description-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin: 0;
+    }
+    .image-container {
+      flex: 0 0 calc(50% - 15px);
+      max-width: calc(50% - 15px);
+    }
+    .description-container {
+      flex: 0 0 calc(50% - 15px);
+      max-width: calc(50% - 15px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .description-title {
+      font-size: 1.5rem;
+      color: #6f8dd0;
+      margin-bottom: 15px;
+      font-weight: 600;
+      text-shadow: 0 2.5px 5px rgba(0, 0, 0, 0.7);
+    }
+    .description-text {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: #e0e0e0;
+    }
+    @media (max-width: 768px) {
+      .image-container,
+      .description-container {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+    }
+    .project-banner {
+      margin-top: -3rem;
+      position: relative;
+    }
+    .project-section {
+      margin-bottom: 0px;
+      padding-bottom: 0px;
+    }
+    .project-section-title {
+      font-size: 1.5rem;
+      padding-bottom: 1rem;
+      color: #f0f0f0;
+      position: relative;
+      font-weight: 600;
+    }
+    .project-section-title:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 70px;
+      height: 4px;
+      background: #4b6cc1;
+      border-radius: 2px;
+    }
+    .section-description {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: #e0e0e0;
+    }
+    .section-subtitle {
+      font-size: 1.2rem;
+      margin: 0;
+      color: #d0d0d0;
+      font-weight: 500;
+      padding-left: 15px;
+      border-left: 3px solid #4b6cc1;
+    }
+    .section-description b {
+      color: #4b6cc1;
+      font-weight: 600;
+    }
+    .content-full {
+      width: 100%;
+      margin-top: 1rem;
+    }
+    .project-image {
+      max-width: 80%;
+      width: auto;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      border-radius: 8px;
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+      border: 1px solid #444;
+    }
+    @media (max-width: 768px) {
+      .project-image {
+        max-width: 100%;
+        margin: 0;
+      }
+    }
+    .key-takeaways {
+      padding: 30px 0;
+      margin: 40px 0;
+    }
+    .skills-list {
+      margin: 30px 0 0 0;
+      padding: 0;
+      list-style-type: none;
+    }
+    .skills-list li {
+      position: relative;
+      padding-left: 25px;
+      margin-bottom: 12px;
+      font-size: 1.1rem;
+      color: #e0e0e0;
+    }
+    .skills-list li:before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: #4b6cc1;
+      font-size: 1.4rem;
+      line-height: 1;
+    }
+    .contact-section {
+      text-align: center;
+      margin: 0px;
+      padding: 0px;
+      background-color: #1a1f2d;
+      border-radius: 10px;
+      border: 1px solid #2a3449;
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.4);
+    }
+    .contact-section h3 {
+      font-size: 1.5rem;
+      color: #f0f0f0;
+      margin: 1rem 0;
+    }
+    .highlight-box {
+      background: rgba(75, 108, 193, 0.15);
+      padding: 25px;
+      border-radius: 10px;
+      border-left: 4px solid #4b6cc1;
+      margin: 30px 0;
+    }
+    .content-left,
+    .content-right {
+      padding: 15px;
+    }
+    .divider {
+      height: 1px;
+      background: rgba(255, 255, 255, 0.1);
+      margin: 35px 0;
+    }
+    .video-container {
+      position: relative;
+      max-width: 80%;
+      width: 100%;
+      margin: 0 auto;
+      border-radius: 8px;
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+      border: 1px solid #444;
+      overflow: hidden;
+    }
+    .video-container::before {
+      content: "";
+      display: block;
+      padding-top: 56.25%;
+    }
+    .video-container video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
+  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+</head>
+<body class="is-preload rc-gradient-bg">
+  <nav class="floating-nav">
+    <a href="index.html#wrapper" class="nav-logo"><b>INOO JO</b></a>
+    <div class="nav-buttons">
+      <a href="index.html#wrapper" class="nav-button"><b>Home</b></a>
+      <a href="index.html#about" class="nav-button"><b>About</b></a>
+      <a href="index.html#contact" class="nav-button"><b>Contact</b></a>
+      <a href="projects.html" class="nav-button"><b>Projects</b></a>
+      <a href="Inoo_Resume.pdf" target="_blank" class="nav-button"><b>Resume</b></a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      &#9776;
+    </button>
+    <div class="nav-dropdown" id="navDropdown">
+      <a href="index.html#wrapper"><b>Home</b></a>
+      <a href="index.html#about"><b>About</b></a>
+      <a href="index.html#contact"><b>Contact</b></a>
+      <a href="projects.html"><b>Projects</b></a>
+      <a href="Inoo_Resume.pdf" target="_blank"><b>Resume</b></a>
+    </div>
+  </nav>
 
-            .highlight-box {
-                background: rgba(75, 108, 193, 0.15);
-                padding: 25px;
-                border-radius: 10px;
-                border-left: 4px solid #4b6cc1;
-                margin: 30px 0;
-            }
-            
-            .content-left, .content-right {
-                padding: 15px;
-            }
-            
-            .divider {
-                height: 1px;
-                background: rgba(255,255,255,0.1);
-                margin: 35px 0;
-            }
-            
-            .two-image-container .image-wrapper img {
-                object-fit: contain;
-                height: auto;
-                width: auto;
-                max-height: 100%;
-            }
-            
-            .video-container {
-                position: relative;
-                max-width: 80%;
-                width: 100%;
-                margin: 0 auto;
-                border-radius: 8px;
-                box-shadow: 0 5px 25px rgba(0,0,0,0.3);
-                border: 1px solid #444;
-                overflow: hidden;
-            }
-            
-            .video-container::before {
-                content: "";
-                display: block;
-                padding-top: 56.25%;
-            }
-            
-            .video-container video {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
-            
-            .ackermann-diagram {
-                max-width: 600px;
-                margin: 25px auto;
-                text-align: center;
-            }
-        </style>
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css"></noscript>
-	</head>
-	<body class="is-preload rc-gradient-bg">
-        <nav class="floating-nav">
-            <a href="index.html#wrapper" class="nav-logo"><b>INOO JO</b></a>
+  <div class="project-banner">
+    <div class="project-title-section">
+      <h1>RC Car - Machine Elements Class</h1>
+      <div class="title-underline"></div>
+    </div>
 
-            <div class="nav-buttons">
-                <a href="index.html#wrapper" class="nav-button"><b>Home</b></a>
-                <a href="index.html#about" class="nav-button"><b>About</b></a>
-                <a href="index.html#contact" class="nav-button"><b>Contact</b></a>
-                <a href="projects.html" class="nav-button"><b>Projects</b></a>
-                <a href="Inoo_Resume.pdf" target="_blank" class="nav-button"><b>Resume</b></a>
-            </div>
-
-            <button
-                class="hamburger"
-                id="hamburger"
-                aria-label="Toggle menu"
-                aria-expanded="false"
-            >
-                &#9776;
-            </button>
-
-            <div class="nav-dropdown" id="navDropdown">
-                <a href="index.html#wrapper"><b>Home</b></a>
-                <a href="index.html#about"><b>About</b></a>
-                <a href="index.html#contact"><b>Contact</b></a>
-                <a href="projects.html"><b>Projects</b></a>
-                <a href="Inoo_Resume.pdf" target="_blank"><b>Resume</b></a>
-            </div>
-        </nav>
-
-        <div class="project-banner">
-            <div class="project-title-section">
-                <h1>RC Car - Machine Elements Class</h1>
-                <div class="title-underline"></div>
-            </div>
-
-            <div class="image-description-container">
-                <div class="image-container">
-                    <img
-                      src="images/rcCar/rc.webp"
-                      alt="rc.jpg"
-                      class="image-left"
-                      onerror="this.onerror=null; this.src='images/rcCar/rc.jpg';"
-                    />
-                    <div class="image-caption">
-                        Competition-winning RC car with carbon fiber reinforced components
-                    </div>
-                </div>
-                
-                <div class="description-container">
-                    <h3 class="description-title">High-Performance RC Racer</h3>
-                    <p class="description-text">
-                        Designed and manufactured a competition-winning RC car with a $50 budget, featuring carbon fiber reinforced 3D-printed components, laser-cut acrylic frame, and precision Ackermann steering system with optimized caster/camber angles.
-                    </p>
-                </div>
-            </div>
-
-            <div class="project-section">
-                <h2 class="project-section-title">Project Summary</h2>
-                <div class="content-full">
-                    <p class="section-description">
-                        This project engineered a high-performance RC car to compete in a machine elements class competition. With a strict $50 budget constraint, we developed a lightweight yet durable design featuring a laser-cut acrylic frame, carbon fiber reinforced 3D-printed components, and a precision Ackermann steering system with optimized caster/camber angles. The car achieved first place in the competition, demonstrating exceptional handling and speed due to its innovative steering implementation and optimized power-to-weight ratio.
-                    </p>
-                </div>
-            </div>
-
-            <div class="divider"></div>
-
-            <div class="project-section">
-                <h2 class="project-section-title">Engineering & Design</h2>
-
-                <div class="content-section">
-                    <h3 class="section-subtitle">Precision Steering System</h3>
-                    <div class="content-full">
-                        <p class="section-description">
-                            The core innovation was our Ackermann steering geometry implementation with optimized caster and camber angles. Through precise calculations, we achieved a 3-wheel turning capability with minimal tire scrub. The steering system featured:
-                        </p>
-                        
-                        <div class="spec-highlight">
-                            <p class="section-description">
-                                Our calculations showed a 23° inner wheel angle and 17° outer wheel angle at full lock, with 5° caster and -1° camber providing optimal stability and cornering performance.
-                            </p>
-                        </div>
-
-                        <img
-                          src="images/rcCar/ackerman.webp"
-                          alt="ackerman.gif"
-                          class="project-image"
-                          onerror="this.onerror=null; this.src='images/rcCar/ackerman.gif';"
-                        />
-                        <div class="image-caption">Ackermann steering geometry calculations and implementation</div>
-
-                        
-                        <div class="two-image-container">
-                            <div class="image-wrapper">
-                                <img
-                                  src="images/rcCar/steering.webp"
-                                  alt="steering.jpg"
-                                  onerror="this.onerror=null; this.src='images/rcCar/steering.jpg';"
-                                />
-                            </div>
-                            <div class="image-wrapper">
-                                <img
-                                  src="images/rcCar/steer.webp"
-                                  alt="steer.jpg"
-                                  onerror="this.onerror=null; this.src='images/rcCar/steer.jpg';"
-                                />
-                            </div>
-                        </div>
-                        <div class="image-caption">Steering system design and chassis without steering</div>
-                    </div>
-                </div>
-
-                <div class="content-section">
-                    <h3 class="section-subtitle">Drivetrain & Power System</h3>
-                    <div class="content-full">
-                        <p class="section-description">
-                            Balancing torque and top speed was critical for competition performance. We implemented a 12V power system with a 20:1 gear reduction to deliver optimal acceleration without sacrificing top speed. The rear-wheel drivetrain featured:
-                        </p>
-                        
-                        <div class="car-stats">
-                            <div class="stat-card">
-                                <h4>Top Speed</h4>
-                                <div class="stat-value">28 km/h</div>
-                                <p>17.4 mph</p>
-                            </div>
-                            <div class="stat-card">
-                                <h4>Acceleration</h4>
-                                <div class="stat-value">0-20 km/h</div>
-                                <p>in 1.8s</p>
-                            </div>
-                            <div class="stat-card">
-                                <h4>Motor Power</h4>
-                                <div class="stat-value">12V DC</div>
-                                <p>80W output</p>
-                            </div>
-                            <div class="stat-card">
-                                <h4>Gear Ratio</h4>
-                                <div class="stat-value">20:1</div>
-                                <p>Torque multiplication</p>
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
-
-                <div class="content-section">
-                    <h3 class="section-subtitle">Frame & Materials Engineering</h3>
-                    <div class="content-full">
-                        <p class="section-description">
-                            The lightweight yet rigid frame was laser-cut from 3mm acrylic, providing an optimal balance of strength and weight. Critical components were 3D-printed with carbon fiber reinforced nylon using Markforged and Raise3D printers for maximum strength-to-weight ratio.
-                        </p>
-                        
-                        <div class="two-image-container">
-                            <div class="image-wrapper">
-                                <img
-                                  src="images/rcCar/botdesign.webp"
-                                  alt="botdesign.jpg"
-                                  onerror="this.onerror=null; this.src='images/rcCar/botdesign.jpg';"
-                                />
-                            </div>
-                            <div class="image-wrapper">
-                                <img
-                                  src="images/rcCar/bottom.webp"
-                                  alt="bottom.jpg"
-                                  onerror="this.onerror=null; this.src='images/rcCar/bottom.jpg';"
-                                />
-                            </div>
-                        </div>
-                        <div class="image-caption">Laser-cut acrylic bottom plate</div>
-                        
-                        <div class="highlight-box">
-                            <p class="section-description">
-                                <b>Material Innovation:</b> Carbon fiber reinforced components were 40% lighter and 300% stronger than standard PLA prints, enabling more aggressive suspension tuning without weight penalties.
-                            </p>
-                        </div>
-                        
-                    </div>
-                </div>
-
-                <div class="content-section">
-                    <h3 class="section-subtitle">Control System & Electronics</h3>
-                    <div class="content-full">
-                        <p class="section-description">
-                            The control system featured a custom servo-driven steering mechanism and proportional speed control. The rear-wheel drivetrain was controlled through a PWM motor controller, while the steering system used a high-torque servo motor capable of 5kg/cm torque. All components were strategically placed to maintain a low center of gravity and balanced weight distribution.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-section">
-                <h2 class="project-section-title">Competition Performance</h2>
-                <div class="content-full">
-                    <p class="section-description">
-                        In the class competition, our RC car demonstrated exceptional performance:
-                    </p>
-                    
-                    <div class="car-stats">
-                        <div class="stat-card">
-                            <h4>Competition Result</h4>
-                            <div class="stat-value">1st Place</div>
-                            <p>Out of 12 teams</p>
-                        </div>
-                        <div class="stat-card">
-                            <h4>Lap Time</h4>
-                            <div class="stat-value">18.3s</div>
-                            <p>Best in competition</p>
-                        </div>
-                        <div class="stat-card">
-                            <h4>Weight</h4>
-                            <div class="stat-value">850g</div>
-                            <p>1.87 lbs</p>
-                        </div>
-                        <div class="stat-card">
-                            <h4>Budget</h4>
-                            <div class="stat-value">$48.75</div>
-                            <p>Under $50 limit</p>
-                        </div>
-                    </div>
-                                        
-                    <div class="highlight-box">
-                        <p class="section-description">
-                            <b>Key Advantage:</b> Our steering system implementation allowed for smooth, predictable control at high speeds, with the carbon fiber reinforced components surviving multiple collisions without damage during the elimination rounds.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-section">
-                <h2 class="project-section-title">Key Takeaways & Skills Utilized</h2>
-                <p class="section-description">
-                    This project demonstrated that precision steering geometry has a greater impact on performance than raw power. The Ackermann implementation with optimized caster angles proved to be the decisive factor in our competition success. The strategic use of carbon fiber reinforced printing allowed us to create strong, lightweight components while staying within budget.
-                </p>
-                
-                <div class="highlight-box">
-                    <p class="section-description">
-                        <b>Engineering Insight:</b> "The integration of traditional mechanical principles (Ackermann steering) with modern fabrication techniques (carbon fiber 3D printing) created a vehicle that outperformed more powerful but less sophisticated competitors."
-                    </p>
-                </div>
-                
-                <h3 class="section-subtitle">Technical Skills Developed</h3>
-                <ul class="skills-list">
-                    <li>Ackermann Steering Calculations</li>
-                    <li>Carbon Fiber Reinforced 3D Printing</li>
-                    <li>Laser Cutting & Precision Fabrication</li>
-                    <li>OnShape Collaborative Design</li>
-                    <li>Drivetrain Optimization</li>
-                    <li>RC Electronics Integration</li>
-                    <li>Weight Distribution Analysis</li>
-                    <li>Budget-Constrained Engineering</li>
-                </ul>
-            </div>
-
-            <div class="divider"></div>
-
-            <div class="project-section">
-                <h2 class="project-section-title">Technical Specifications</h2>
-                <div class="contact-section">
-                    <div class="car-stats">
-                        <div class="stat-card">
-                            <h4>Power System</h4>
-                            <div class="stat-value">12V DC</div>
-                            <p>2000mAh LiPo</p>
-                        </div>
-                        <div class="stat-card">
-                            <h4>Steering</h4>
-                            <div class="stat-value">Ackermann</div>
-                            <p>5° caster / -1° camber</p>
-                        </div>
-                        <div class="stat-card">
-                            <h4>Frame Material</h4>
-                            <div class="stat-value">Acrylic</div>
-                            <p>Laser-cut 3mm</p>
-                        </div>
-                        <div class="stat-card">
-                            <h4>Components</h4>
-                            <div class="stat-value">CF-Nylon</div>
-                            <p>Markforged printed</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class="image-description-container">
+      <div class="image-container">
+        <img
+          src="images/rcCar/rc.webp"
+          alt="rc.jpg"
+          class="image-left"
+          onerror="this.onerror=null; this.src='images/rcCar/rc.jpg';"
+        />
+        <div class="image-caption">
+          Competition-winning RC car with carbon fiber reinforced components
         </div>
+      </div>
+      <div class="description-container">
+        <h3 class="description-title">High-Performance RC Racer</h3>
+        <p class="description-text">
+          Designed and manufactured a competition-winning RC car with a $50 budget, featuring carbon fiber reinforced 3D-printed components, laser-cut acrylic frame, and precision Ackermann steering system with optimized caster/camber angles.
+        </p>
+      </div>
+    </div>
 
-		<div id="bg2"></div>
+    <div class="project-section">
+      <h2 class="project-section-title">Project Summary</h2>
+      <div class="content-full">
+        <p class="section-description">
+          This project engineered a high-performance RC car to compete in a machine elements class competition. With a strict $50 budget constraint, we developed a lightweight yet durable design featuring a laser-cut acrylic frame, carbon fiber reinforced 3D-printed components, and a precision Ackermann steering system with optimized caster/camber angles. The car achieved first place in the competition, demonstrating exceptional handling and speed due to its innovative steering implementation and optimized power-to-weight ratio.
+        </p>
+      </div>
+    </div>
 
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                // Hamburger toggle
-                const hamburger = document.getElementById('hamburger');
-                const dropdown = document.getElementById('navDropdown');
+    <div class="divider"></div>
 
-                hamburger.addEventListener('click', function() {
-                    const isExpanded = this.getAttribute('aria-expanded') === 'true';
-                    this.setAttribute('aria-expanded', String(!isExpanded));
-                    dropdown.classList.toggle('show');
-                });
-                const containers = document.querySelectorAll('.two-image-container');
-                
-                containers.forEach(container => {
-                    const images = container.querySelectorAll('.image-wrapper img');
-                    
-                    if (!images || images.length < 2) {
-                        return;
-                    }
-                    
-                    const image1 = images[0];
-                    const image2 = images[1];
-                    
-                    const GAP = 15;
-                    let MAX_CONTAINER_WIDTH = (window.innerWidth < 768 ? 1 : 0.8) * container.parentElement.offsetWidth;
-                    
-                    function resizeImages() {
-                        if (!image1.naturalWidth || !image2.naturalWidth || 
-                            image1.naturalWidth === 0 || image2.naturalWidth === 0) {
-                            return;
-                        }
-                        
-                        const aspectRatio1 = image1.naturalWidth / image1.naturalHeight;
-                        const aspectRatio2 = image2.naturalWidth / image2.naturalHeight;
-                        
-                        const maxHeight = (MAX_CONTAINER_WIDTH - GAP) / (aspectRatio1 + aspectRatio2);
-                        
-                        const commonHeight = Math.min(
-                            maxHeight,
-                            image1.naturalHeight,
-                            image2.naturalHeight
-                        );
-                        
-                        image1.style.height = `${commonHeight}px`;
-                        image2.style.height = `${commonHeight}px`;
-                    }
-                    
-                    function init() {
-                        if (image1.complete && image2.complete) {
-                            resizeImages();
-                        } else {
-                            image1.addEventListener('load', resizeImages);
-                            image2.addEventListener('load', resizeImages);
-                        }
-                    }
-                    
-                    window.addEventListener('resize', () => {
-                        MAX_CONTAINER_WIDTH = (window.innerWidth < 768 ? 1 : 0.8) * container.parentElement.offsetWidth;
-                        resizeImages();
-                    });
-                    
-                    init();
-                });
-            });
-        </script>
+    <div class="project-section">
+      <h2 class="project-section-title">Engineering & Design</h2>
 
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
-	</body>
+      <div class="content-section">
+        <h3 class="section-subtitle">Precision Steering System</h3>
+        <div class="content-full">
+          <p class="section-description">
+            The core innovation was our Ackermann steering geometry implementation with optimized caster and camber angles. Through precise calculations, we achieved a 3-wheel turning capability with minimal tire scrub. The steering system featured:
+          </p>
+          <div class="spec-highlight">
+            <p class="section-description">
+              Our calculations showed a 23° inner wheel angle and 17° outer wheel angle at full lock, with 5° caster and -1° camber providing optimal stability and cornering performance.
+            </p>
+          </div>
+          <img
+            src="images/rcCar/ackerman.webp"
+            alt="ackerman.gif"
+            class="project-image"
+            onerror="this.onerror=null; this.src='images/rcCar/ackerman.gif';"
+          />
+          <div class="image-caption">Ackermann steering geometry calculations and implementation</div>
+
+          <div class="two-media-container" hidden>
+            <div class="media-wrapper">
+              <img
+                src="images/rcCar/steering.webp"
+                alt="steering.jpg"
+                onerror="this.onerror=null; this.src='images/rcCar/steering.jpg';"
+              />
+            </div>
+            <div class="media-wrapper">
+              <img
+                src="images/rcCar/steer.webp"
+                alt="steer.jpg"
+                onerror="this.onerror=null; this.src='images/rcCar/steer.jpg';"
+              />
+            </div>
+          </div>
+          <div class="image-caption">Steering system design and chassis without steering</div>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h3 class="section-subtitle">Drivetrain & Power System</h3>
+        <div class="content-full">
+          <p class="section-description">
+            Balancing torque and top speed was critical for competition performance. We implemented a 12V power system with a 20:1 gear reduction to deliver optimal acceleration without sacrificing top speed. The rear-wheel drivetrain featured:
+          </p>
+          <div class="car-stats">
+            <div class="stat-card">
+              <h4>Top Speed</h4>
+              <div class="stat-value">28 km/h</div>
+              <p>17.4 mph</p>
+            </div>
+            <div class="stat-card">
+              <h4>Acceleration</h4>
+              <div class="stat-value">0-20 km/h</div>
+              <p>in 1.8s</p>
+            </div>
+            <div class="stat-card">
+              <h4>Motor Power</h4>
+              <div class="stat-value">12V DC</div>
+              <p>80W output</p>
+            </div>
+            <div class="stat-card">
+              <h4>Gear Ratio</h4>
+              <div class="stat-value">20:1</div>
+              <p>Torque multiplication</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h3 class="section-subtitle">Frame & Materials Engineering</h3>
+        <div class="content-full">
+          <p class="section-description">
+            The lightweight yet rigid frame was laser-cut from 3mm acrylic, providing an optimal balance of strength and weight. Critical components were 3D-printed with carbon fiber reinforced nylon using Markforged and Raise3D printers for maximum strength-to-weight ratio.
+          </p>
+
+          <div class="two-media-container" hidden>
+            <div class="media-wrapper">
+              <img
+                src="images/rcCar/botdesign.webp"
+                alt="botdesign.jpg"
+                onerror="this.onerror=null; this.src='images/rcCar/botdesign.jpg';"
+              />
+            </div>
+            <div class="media-wrapper">
+              <img
+                src="images/rcCar/bottom.webp"
+                alt="bottom.jpg"
+                onerror="this.onerror=null; this.src='images/rcCar/bottom.jpg';"
+              />
+            </div>
+          </div>
+          <div class="image-caption">Laser-cut acrylic bottom plate</div>
+
+          <div class="highlight-box">
+            <p class="section-description">
+              <b>Material Innovation:</b> Carbon fiber reinforced components were 40% lighter and 300% stronger than standard PLA prints, enabling more aggressive suspension tuning without weight penalties.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-section">
+      <h2 class="project-section-title">Competition Performance</h2>
+      <div class="content-full">
+        <p class="section-description">
+          In the class competition, our RC car demonstrated exceptional performance:
+        </p>
+        <div class="car-stats">
+          <div class="stat-card">
+            <h4>Competition Result</h4>
+            <div class="stat-value">1st Place</div>
+            <p>Out of 12 teams</p>
+          </div>
+          <div class="stat-card">
+            <h4>Lap Time</h4>
+            <div class="stat-value">18.3s</div>
+            <p>Best in competition</p>
+          </div>
+          <div class="stat-card">
+            <h4>Weight</h4>
+            <div class="stat-value">850g</div>
+            <p>1.87 lbs</p>
+          </div>
+          <div class="stat-card">
+            <h4>Budget</h4>
+            <div class="stat-value">$48.75</div>
+            <p>Under $50 limit</p>
+          </div>
+        </div>
+        <div class="highlight-box">
+          <p class="section-description">
+            <b>Key Advantage:</b> Our steering system implementation allowed for smooth, predictable control at high speeds, with the carbon fiber reinforced components surviving multiple collisions without damage during the elimination rounds.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-section">
+      <h2 class="project-section-title">Key Takeaways & Skills Utilized</h2>
+      <p class="section-description">
+        This project demonstrated that precision steering geometry has a greater impact on performance than raw power. The Ackermann implementation with optimized caster angles proved to be the decisive factor in our competition success. The strategic use of carbon fiber reinforced printing allowed us to create strong, lightweight components while staying within budget.
+      </p>
+      <div class="highlight-box">
+        <p class="section-description">
+          <b>Engineering Insight:</b> "The integration of traditional mechanical principles (Ackermann steering) with modern fabrication techniques (carbon fiber 3D printing) created a vehicle that outperformed more powerful but less sophisticated competitors."
+        </p>
+      </div>
+      <h3 class="section-subtitle">Technical Skills Developed</h3>
+      <ul class="skills-list">
+        <li>Ackermann Steering Calculations</li>
+        <li>Carbon Fiber Reinforced 3D Printing</li>
+        <li>Laser Cutting & Precision Fabrication</li>
+        <li>OnShape Collaborative Design</li>
+        <li>Drivetrain Optimization</li>
+        <li>RC Electronics Integration</li>
+        <li>Weight Distribution Analysis</li>
+        <li>Budget-Constrained Engineering</li>
+      </ul>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="project-section">
+      <h2 class="project-section-title">Technical Specifications</h2>
+      <div class="contact-section">
+        <div class="car-stats">
+          <div class="stat-card">
+            <h4>Power System</h4>
+            <div class="stat-value">12V DC</div>
+            <p>2000mAh LiPo</p>
+          </div>
+          <div class="stat-card">
+            <h4>Steering</h4>
+            <div class="stat-value">Ackermann</div>
+            <p>5° caster / -1° camber</p>
+          </div>
+          <div class="stat-card">
+            <h4>Frame Material</h4>
+            <div class="stat-value">Acrylic</div>
+            <p>Laser-cut 3mm</p>
+          </div>
+          <div class="stat-card">
+            <h4>Components</h4>
+            <div class="stat-value">CF-Nylon</div>
+            <p>Markforged printed</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="bg2"></div>
+
+  <!-- New JS to unhide & set aspect ratios -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const containers = document.querySelectorAll('.two-media-container');
+      containers.forEach(container => {
+        const media = container.querySelectorAll('img, video');
+        if (media.length < 2) return;
+        let loaded = 0;
+        media.forEach(el => {
+          function setAR() {
+            let w, h;
+            if (el.tagName === 'IMG') {
+              w = el.naturalWidth;
+              h = el.naturalHeight;
+            } else if (el.tagName === 'VIDEO') {
+              w = el.videoWidth;
+              h = el.videoHeight;
+            }
+            if (w && h) {
+              el.parentElement.style.setProperty('--ar', w / h);
+            }
+            if (++loaded === media.length) container.hidden = false;
+          }
+          if (el.tagName === 'IMG') {
+            el.complete ? setAR() : el.addEventListener('load', setAR);
+          } else {
+            el.readyState >= 1 ? setAR() : el.addEventListener('loadedmetadata', setAR);
+          }
+        });
+      });
+
+      // Hamburger menu toggle
+      const hamburger = document.getElementById('hamburger');
+      const dropdown  = document.getElementById('navDropdown');
+      hamburger.addEventListener('click', () => {
+        const exp = hamburger.getAttribute('aria-expanded') === 'true';
+        hamburger.setAttribute('aria-expanded', String(!exp));
+        dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+      });
+    });
+  </script>
+
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
 </html>
